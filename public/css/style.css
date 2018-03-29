@@ -1,5 +1,10 @@
 body {
-	background:#f4f4f4;
+	background: url(../img/bg.jpg) right bottom no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
 }
 
 /* Navbar */
@@ -122,6 +127,7 @@ body {
 .breadcrumb {
 	background: #cccccc;
 	color: #333333;
+  border-color: #c0392b !important;
 }
 
 .breadcrumb a {

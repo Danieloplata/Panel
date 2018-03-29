@@ -12,10 +12,25 @@
 */
 
 Route::get('/', function () {
+
     return view('home');
+
 });
 
 
-Route::get('/about', function () {
-	return view('about');
+Route::get('/panels', function () {
+
+	$panels = DB::table('panels')->get();
+
+	return view('panels', compact('panels'));
+
+});
+
+
+Route::get('/panel', function () {
+
+	$panelID = 1;
+
+	return view('panel', compact('panelID'));
+
 });
