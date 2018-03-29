@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <title>Homepage</title>
+    <title>Panel</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=3') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=4') }}" rel="stylesheet">
     
   </head>
 
@@ -50,19 +50,20 @@
                 <div class="col-md-10">
                     <h1><span class="glyphicon glyphicon-home" aria-hidden="true"></span> System <small>Development mode</small></h1>
                 </div>
-                <!--<div class="col-md-2">
-                    <div class="dropdown create">
+                <div class="col-md-2" style="float: right;">
+                    <div class="dropdown create" style="float: right;">
                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Create content
+                        Panel options
                         <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Action 1</a></li>
-                        <li><a href="#">Action 2</a></li>
-                        <li><a href="#">Action 3</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> Mark as complete</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit panel</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export data to CSV</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete panel</a></li>
                       </ul>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
     </header>
