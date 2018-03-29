@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=2') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     
   </head>
 
@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Navigation</a>
+          <a class="navbar-brand" href="#">System</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -118,33 +118,10 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading main-color-bg">
-                            <h3 class="panel-title">Project overview</h3>
+                            <h3 class="panel-title">Panel details</h3>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-striped table-hover centre-text">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>PROJECT</th>
-                                    <th>PROVIDER</th>
-                                    <th>LINK</th>
-                                    <th>OWNER</th>
-                                    <th>STATUS</th>
-                                    <th>VIEW</th>
-                                </tr>
-
-                                @foreach ($panels as $panel)
-                                <tr>
-                                    <th>{{ $panel->projectID }}</th>
-                                    <th>{{ $panel->projectName }}</th>
-                                    <th>{{ $panel->projectProvider }}</th>
-                                    <th>{{ $panel->projectLink }}</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                @endforeach
-
-                            </table>
+                            Display individual panel data here
                         </div>
                     </div>
 

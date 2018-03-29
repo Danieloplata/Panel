@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePanelsTable extends Migration
+class AddColsPanels extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreatePanelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('panels', function (Blueprint $table) {
+        Schema::table('panels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('surveyID');
             $table->string('projectName');
             $table->string('projectLink');
             $table->integer('projectProvider');
-            $table->string('status');
+            $table->string('Status');
             $table->string('owner');
             $table->timestamps();
         });
@@ -32,6 +32,8 @@ class CreatePanelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('panels');
+        Schema::table('panels', function (Blueprint $table) {
+            //
+        });
     }
 }

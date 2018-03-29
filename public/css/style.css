@@ -1,3 +1,8 @@
+html, body { 
+  height: 100%;
+  min-height: 100%; 
+}
+
 body {
 	background: url(../img/bg.jpg) right bottom no-repeat;
 	-webkit-background-size: cover;
@@ -127,7 +132,9 @@ body {
 .breadcrumb {
 	background: #cccccc;
 	color: #333333;
-  border-color: #c0392b !important;
+  border-color: rgb(170,170,170);
+  border-style: solid;
+  border-width: 0.5px;
 }
 
 .breadcrumb a {
@@ -176,9 +183,9 @@ th {
 	color: #ef4836;
 }
 
-
-
-
+tr {
+  vertical-align: middle;
+}
 
 
 @media (max-width: 767px) {

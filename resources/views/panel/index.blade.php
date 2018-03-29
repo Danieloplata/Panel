@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <title>Homepage</title>
+    <title>Panels</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=2') }}" rel="stylesheet">
     
   </head>
 
@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">System</a>
+          <a class="navbar-brand" href="#">Navigation</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -123,104 +123,27 @@
                         <div class="panel-body">
                             <table class="table table-striped table-hover centre-text">
                                 <tr>
-                                    <th>PROJECT ID</th>
-                                    <th>TYPE</th>
+                                    <th>ID</th>
+                                    <th>PROJECT</th>
                                     <th>PROVIDER</th>
                                     <th>LINK</th>
                                     <th>OWNER</th>
                                     <th>STATUS</th>
                                     <th>VIEW</th>
                                 </tr>
+
+                                @foreach ($panels as $panel)
                                 <tr>
-                                    <th>1</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
+                                    <th class="vertical-align">{{ $panel->id }}</th>
+                                    <th>{{ $panel->projectName }}</th>
+                                    <th>{{ $panel->projectProvider }}</th>
+                                    <th>{{ $panel->projectLink }}</th>
+                                    <th>{{ $panel->Owner }}</th>
+                                    <th class="font-green">{{ $panel->status }}</th>
                                     <th><button type="button" class="btn btn-danger">View</button></th>
                                 </tr>
-                                <tr class="row-offset">
-                                    <th>2</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-orange">PAUSED</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>3</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-red">OFFLINE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr class="row-offset">
-                                    <th>4</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>5</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>6</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>7</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>8</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>9</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
-                                <tr>
-                                    <th>10</th>
-                                    <th>Panel</th>
-                                    <th>Test Provider</th>
-                                    <th>http://google.com</th>
-                                    <th>Dan</th>
-                                    <th class="font-green">LIVE</th>
-                                    <th><button type="button" class="btn btn-danger">View</button></th>
-                                </tr>
+                                @endforeach
+
                             </table>
                         </div>
                     </div>
