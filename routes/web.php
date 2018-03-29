@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 
+// Panel section routing
+
 Route::get('/panel', function () {
 
 	$panels = DB::table('panels')->latest()->get();
@@ -32,6 +34,23 @@ Route::get('/panel/{id}', function ($id) {
 	
 	$panel = DB::table('panels')->find($id);
 
-	return view('panel/show', compact('panelID'));
+	return view('panel/show', compact('panel'));
+
+});
+
+// Help section routing
+
+Route::get('/help', function () {
+
+	
+	return view('help/index');
+
+});
+
+
+Route::get('/help/{topic}', function ($topic) {
+
+	
+	return view('help/show');
 
 });

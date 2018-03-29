@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=3') }}" rel="stylesheet">
     
   </head>
 
@@ -25,16 +25,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">System</a>
+          <a class="navbar-brand" href="#">Navigation</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Panel</a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li class="active"><a href="{{ url('/panel') }}">Panel</a></li>
             <li><a href="#">Feature 1</a></li>
             <li><a href="#">Feature 2</a></li>
             <li><a href="#">Feature 3</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="{{ url('/help') }}">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome, $user</a></li>
@@ -70,7 +70,7 @@
     <section id="breadcrumb">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="active">Home</li>
+                <li class="active">Home > Panel > Displaying Panel ID: {{ $panel->id }}</li>
             </ol>
         </div>
     </section>
@@ -121,7 +121,7 @@
                             <h3 class="panel-title">Panel details</h3>
                         </div>
                         <div class="panel-body">
-                            Display individual panel data here
+                            Display individual panel data for Panel ID {{ $panel->id }} here
                         </div>
                     </div>
 

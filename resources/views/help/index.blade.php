@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <title>Panels</title>
+    <title>Help</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,11 +30,11 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li class="active"><a href="{{ url('/panel') }}">Panel</a></li>
+            <li><a href="{{ url('/panel') }}">Panel</a></li>
             <li><a href="#">Feature 1</a></li>
             <li><a href="#">Feature 2</a></li>
             <li><a href="#">Feature 3</a></li>
-            <li><a href="{{ url('/help') }}">Help</a></li>
+            <li class="active"><a href="{{ url('/help') }}">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome, $user</a></li>
@@ -70,7 +70,7 @@
     <section id="breadcrumb">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="active">Home > Panel > Index</li>
+                <li class="active">Home > Help > Index</li>
             </ol>
         </div>
     </section>
@@ -118,33 +118,10 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading main-color-bg">
-                            <h3 class="panel-title">Project overview</h3>
+                            <h3 class="panel-title">Help Section</h3>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-striped table-hover centre-text">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>PROJECT</th>
-                                    <th>PROVIDER</th>
-                                    <th>LINK</th>
-                                    <th>OWNER</th>
-                                    <th>STATUS</th>
-                                    <th>VIEW</th>
-                                </tr>
-
-                                @foreach ($panels as $panel)
-                                <tr>
-                                    <th class="vertical-align">{{ $panel->id }}</th>
-                                    <th>{{ $panel->projectName }}</th>
-                                    <th>{{ $panel->projectProvider }}</th>
-                                    <th>{{ $panel->projectLink }}</th>
-                                    <th>{{ $panel->Owner }}</th>
-                                    <th class="font-green">{{ $panel->status }}</th>
-                                    <th><a href="{{ url('/panel') }}/{{ $panel->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
-                                </tr>
-                                @endforeach
-
-                            </table>
+                            Display an index of all help topics here
                         </div>
                     </div>
 

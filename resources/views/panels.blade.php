@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=3') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=2') }}" rel="stylesheet">
     
   </head>
 
@@ -29,12 +29,12 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="{{ url('/') }}">Home</a></li>
-            <li class="active"><a href="{{ url('/panel') }}">Panel</a></li>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Panel</a></li>
             <li><a href="#">Feature 1</a></li>
             <li><a href="#">Feature 2</a></li>
             <li><a href="#">Feature 3</a></li>
-            <li><a href="{{ url('/help') }}">Help</a></li>
+            <li><a href="#">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome, $user</a></li>
@@ -70,7 +70,7 @@
     <section id="breadcrumb">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="active">Home > Panel > Index</li>
+                <li class="active">Home</li>
             </ol>
         </div>
     </section>
@@ -140,7 +140,7 @@
                                     <th>{{ $panel->projectLink }}</th>
                                     <th>{{ $panel->Owner }}</th>
                                     <th class="font-green">{{ $panel->status }}</th>
-                                    <th><a href="{{ url('/panel') }}/{{ $panel->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
+                                    <th><button type="button" class="btn btn-danger">View</button></th>
                                 </tr>
                                 @endforeach
 

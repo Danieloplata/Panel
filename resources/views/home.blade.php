@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=4') }}" rel="stylesheet">
     
   </head>
 
@@ -25,16 +25,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">System</a>
+          <a class="navbar-brand" href="#">Navigation</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Panel</a></li>
+            <li class="active"><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('/panel') }}">Panel</a></li>
             <li><a href="#">Feature 1</a></li>
             <li><a href="#">Feature 2</a></li>
             <li><a href="#">Feature 3</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="#">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome, $user</a></li>
@@ -139,7 +139,7 @@
                             <div class="col-md-3">
                                 <div class="well featured-items">
                                     <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 886</h2>
-                                    <h4>Feature 2</h4>
+                                    <h4>Dupes blocked</h4>
                                 </div>
                             </div>
 
