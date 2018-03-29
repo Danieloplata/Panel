@@ -1,8 +1,13 @@
+<p align="center">
+  <img src="https://img.shields.io/github/license/Danieloplata/System.svg" />
+  <img src="https://img.shields.io/github/issues/Danieloplata/System.svg" />
+</p>
+
 ## About
 
 As a learning exercise I am simultaneously creating a new project in both [vanilla PHP](https://php.net) and [Laravel](https://laravel.com/). I am creating this in a public repository as I am interested in submitting the project for code review when it nears completion.
 
-## The system
+<p>## The task
 
 The task is to create a piece of project management software, mainly centred around online questionnaires/surveys. The main feature of this will be a Panel, which will serve as a seperation layer between the surveys and the wider web, allowing for greater control, greater targeting and security.
 
