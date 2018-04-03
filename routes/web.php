@@ -29,10 +29,10 @@ Route::get('/panel', function () {
 });
 
 
-Route::get('/panel/{id}', function ($id) {
+Route::get('/panel/{panelID}', function ($panelID) {
 
 	
-	$panel = DB::table('panels')->find($id);
+	$panel = DB::table('panels')->find($panelID);
 
 	return view('panel/show', compact('panel'));
 

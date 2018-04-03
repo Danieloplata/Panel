@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=4') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=5') }}" rel="stylesheet">
     
   </head>
 
@@ -71,7 +71,7 @@
     <section id="breadcrumb">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="active">Home > Panel > Displaying Panel ID: {{ $panel->id }}</li>
+                <li class="active">Home > Panel > Displaying: {{ $panel->projectName }}</li>
             </ol>
         </div>
     </section>
@@ -119,10 +119,98 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading main-color-bg">
-                            <h3 class="panel-title">Panel details</h3>
+                            <h3 class="panel-title">Panel overview</h3>
                         </div>
                         <div class="panel-body">
-                            Display individual panel data for Panel ID {{ $panel->id }} here
+                            <table class="table table-bordered">
+                                <tbody align="left">
+                                    <tr>
+                                      <td class="panel-heading main-color-bg" colspan="5">Project Details</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Project Name</b></td>
+                                      <td width="35%" colspan="2">{{ $panel->projectName }}</td>
+                                      <td width="15%" class="active"><b>Project No</b></td>
+                                      <td width="35%">{{ $panel->id }}</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Provider</b></td>
+                                      <td width="35%" colspan="2">{{ $panel->projectProvider }}</td>
+                                      <td width="15%" class="active"><b>Created by</b></td>
+                                      <td width="35%">{{ $panel->Owner }}</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Countries</b></td>
+                                      <td width="35%" colspan="5">United Kingdom, United States of America, Sweden, India, France, Germany</td>
+                                    </tr>
+                                     <tr>
+                                      <td class="panel-heading main-color-bg" colspan="5">Panel Usage</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Status</b></td>
+                                      <td width="35%" colspan="2" class="font-green">{{ $panel->status }}</td>
+                                      <td width="15%" class="active"><b>Total</b></td>
+                                      <td width="35%"></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Completes</b></td>
+                                      <td width="35%" colspan="2">782</td>
+                                      <td width="15%" class="active"><b>Incompletes</b></td>
+                                      <td width="35%">218</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Quota full</b></td>
+                                      <td width="35%" colspan="2">250</td>
+                                      <td width="15%" class="active"><b>Screenout</b></td>
+                                      <td width="35%">250</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Incidence (%)</b></td>
+                                      <td width="35%" colspan="2">78%</td>
+                                      <td width="15%" class="active"><b>Screenouts (%)</b></td>
+                                      <td width="35%">25%</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="panel-heading main-color-bg" colspan="5"><b>Links for Client</b></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Test link</b></td>
+                                      <td width="35%" colspan="5">http://survey.com/survey/INSERTID/id/</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Start link</b></td>
+                                      <td width="35%" colspan="5">http://survey.com/panel/surveyID/INSERTID/panelID/</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Completion</b></td>
+                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/INSERTID/status/1/panelID/</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Quota full</b></td>
+                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/INSERTID/status/2/panelID/</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Screenout</b></td>
+                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/INSERTID/status/3/panelID/</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="panel-heading main-color-bg" colspan="5"><b>Provider links</b></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Completion</b></td>
+                                      <td width="35%" colspan="5">http://s.cint.com/Survey/Complete?id=</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Quota full</b></td>
+                                      <td width="35%" colspan="5">http://s.cint.com/Survey/QuotaFull?id=</td>
+                                    </tr>
+                                    <tr>
+                                      <td width="15%" class="active"><b>Screenout</b></td>
+                                      <td width="35%" colspan="5">http://s.cint.com/Survey/EarlyScreenOut?id=</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
 
