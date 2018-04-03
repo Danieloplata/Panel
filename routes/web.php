@@ -22,17 +22,19 @@ Route::get('/', function () {
 
 Route::get('/panel', function () {
 
-	$panels = DB::table('panels')->latest()->get();
+	//$panels = DB::table('panels')->latest()->get();
+
+	$panels = App\Panel::all();
 
 	return view('panel/index', compact('panels'));
 
 });
 
 
-Route::get('/panel/{panelID}', function ($panelID) {
+Route::get('/panel/{id}', function ($id) {
 
 	
-	$panel = DB::table('panels')->find($panelID);
+	$panel = DB::table('panels')->find($id);
 
 	return view('panel/show', compact('panel'));
 
