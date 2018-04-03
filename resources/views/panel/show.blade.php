@@ -171,30 +171,30 @@
                                       <td width="35%">25%</td>
                                     </tr>
                                     <tr>
-                                      <td class="panel-heading main-color-bg" colspan="5"><b>Links for Client</b></td>
+                                      <td class="panel-heading main-color-bg" colspan="5">Links for Client</td>
                                     </tr>
                                     <tr>
                                       <td width="15%" class="active"><b>Test link</b></td>
-                                      <td width="35%" colspan="5">http://survey.com/survey/INSERTID/id/</td>
+                                      <td width="35%" colspan="5">http://survey.com/survey/{{ $panel->surveyID }}/id/test</td>
                                     </tr>
                                     <tr>
                                       <td width="15%" class="active"><b>Start link</b></td>
-                                      <td width="35%" colspan="5">http://survey.com/panel/surveyID/INSERTID/panelID/</td>
+                                      <td width="35%" colspan="5">http://survey.com/panel/surveyID/{{ $panel->surveyID }}/panelID/</td>
                                     </tr>
                                     <tr>
                                       <td width="15%" class="active"><b>Completion</b></td>
-                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/INSERTID/status/1/panelID/</td>
+                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/1/panelID/</td>
                                     </tr>
                                     <tr>
                                       <td width="15%" class="active"><b>Quota full</b></td>
-                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/INSERTID/status/2/panelID/</td>
+                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/2/panelID/</td>
                                     </tr>
                                     <tr>
                                       <td width="15%" class="active"><b>Screenout</b></td>
-                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/INSERTID/status/3/panelID/</td>
+                                      <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/3/panelID/</td>
                                     </tr>
                                     <tr>
-                                      <td class="panel-heading main-color-bg" colspan="5"><b>Provider links</b></td>
+                                      <td class="panel-heading main-color-bg" colspan="5">Provider links</td>
                                     </tr>
                                     <tr>
                                       <td width="15%" class="active"><b>Completion</b></td>
