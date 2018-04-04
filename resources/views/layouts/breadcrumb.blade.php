@@ -1,7 +1,7 @@
-	<section id="breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="active">Home</li>
-            </ol>
-        </div>
-    </section>
+<section id="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="active">@yield('breadcrumb')</li>
+        </ol>
+    </div>
+</section>

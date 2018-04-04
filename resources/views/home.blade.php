@@ -1,43 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <title>Homepage</title>
+@extends('layout')
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=4') }}" rel="stylesheet">
+@section('pagetitle')
+    Homepage
+@endsection
+
+@section('headerDropDown')
     
-  </head>
+@endsection
 
-  <body>
-    @include('layouts/nav')
-    @include('layouts/header')
-    @include('layouts/breadcrumb')
-    <section id="main">
-        <div class="container">
-            <div class="row">
-                @include('layouts/sidebar')
+@section('breadcrumb')
+    Home
+@endsection
 
-                <!-- Main body of content -->
+@section('content')
+    <!-- Featured items -->
 
-                @include('layouts/featureditems')
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Statistics</h3>
+         </div>
+         <div class="panel-body">
 
-                <!-- End of main body of content -->
-
+            <div class="col-md-3">
+                <div class="well featured-items">
+                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 127</h2>
+                    <h4>Panels created</h4>
+                </div>
             </div>
+
+            <div class="col-md-3">
+                <div class="well featured-items">
+                    <h2><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> 2,954</h2>
+                    <h4>Panel errors</h4>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="well featured-items">
+                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 886</h2>
+                    <h4>Dupes blocked</h4>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="well featured-items">
+                    <h2><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 12</h2>
+                    <h4>Projects expired</h4>
+                </div>
+            </div>
+
+         </div>
+    </div>
+
+    <!-- Latest projects -->
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Project overview</h3>
         </div>
-    </section>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!--<script src="{{ URL::asset('js/jquery.min.js') }}"></script>--> 
-    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-
-  </body>
-</html>
+        <div class="panel-body">
+            <table class="table table-striped table-hover centre-text">
+                <tr>
+                    <th>PROJECT ID</th>
+                    <th>TYPE</th>
+                    <th>PROVIDER</th>
+                    <th>LINK</th>
+                    <th>OWNER</th>
+                    <th>STATUS</th>
+                    <th>VIEW</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Panel</th>
+                    <th>Test Provider</th>
+                    <th>http://google.com</th>
+                    <th>Dan</th>
+                    <th class="font-green">LIVE</th>
+                    <th><button type="button" class="btn btn-danger">View</button></th>
+                </tr>
+                <tr class="row-offset">
+                    <th>2</th>
+                    <th>Panel</th>
+                    <th>Test Provider</th>
+                    <th>http://google.com</th>
+                    <th>Dan</th>
+                    <th class="font-orange">PAUSED</th>
+                    <th><button type="button" class="btn btn-danger">View</button></th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>Panel</th>
+                    <th>Test Provider</th>
+                    <th>http://google.com</th>
+                    <th>Dan</th>
+                    <th class="font-red">OFFLINE</th>
+                    <th><button type="button" class="btn btn-danger">View</button></th>
+                </tr>
+                <tr class="row-offset">
+                    <th>4</th>
+                    <th>Panel</th>
+                    <th>Test Provider</th>
+                    <th>http://google.com</th>
+                    <th>Dan</th>
+                    <th class="font-green">LIVE</th>
+                    <th><button type="button" class="btn btn-danger">View</button></th>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <th>Panel</th>
+                    <th>Test Provider</th>
+                    <th>http://google.com</th>
+                    <th>Dan</th>
+                    <th class="font-green">LIVE</th>
+                    <th><button type="button" class="btn btn-danger">View</button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+@endsection
