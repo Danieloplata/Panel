@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Panel extends Model
 {
- 	public function isComplete()
+ 	public static function activePanels()
 	{
-		return false;
+		return static::where('status', 'LIVE')->get();
 	}
 }

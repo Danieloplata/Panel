@@ -11,48 +11,22 @@
 |
 */
 
+// Homepage view
 Route::get('/', function () {
-
     return view('home');
-
 });
 
+// Main panel view
+Route::get('/panel', 'PanelController@index');
 
-// Panel section routing
-
-Route::get('/panel', function () {
-
-	//$panels = DB::table('panels')->latest()->get();
-
-	$panels = App\Panel::all();
-
-	return view('panel/index', compact('panels'));
-
-});
-
-
-Route::get('/panel/{id}', function ($id) {
-
-	
-	$panel = DB::table('panels')->find($id);
-
-	return view('panel/show', compact('panel'));
-
-});
+// Individual panel view
+Route::get('/panel/{panel}', 'PanelController@show');
 
 // Help section routing
-
 Route::get('/help', function () {
-
-	
-	return view('help/index');
-
+		return view('help/index');
 });
 
-
 Route::get('/help/{topic}', function ($topic) {
-
-	
 	return view('help/show');
-
 });
