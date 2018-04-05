@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 use App\Panel;
 
@@ -17,5 +17,23 @@ class PanelController extends Controller
     public function show(Panel $panel)
     {
 		return view('panel/show', compact('panel'));
+    }
+
+    public function create()
+    {
+		return view('panel/create');
+    }
+
+    public function store()
+    {
+		Panel::create(request([
+			'surveyID',
+			'projectName',
+			'projectLink',
+			'status',
+			'owner'
+			]));
+
+		return redirect('/');
     }
 }

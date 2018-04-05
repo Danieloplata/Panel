@@ -16,11 +16,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Main panel view
+// Main panel views
 Route::get('/panel', 'PanelController@index');
+//Route::get('/panel/{panel}', 'PanelController@show');
 
-// Individual panel view
-Route::get('/panel/{panel}', 'PanelController@show');
+// Panel interaction
+Route::get('/panel/create', 'PanelController@create');
+Route::post('/panel', 'PanelController@store')->name('createPanel');
 
 // Help section routing
 Route::get('/help', function () {
