@@ -12,12 +12,12 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/panel') }}">Panel</a></li>
+            <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+            <li class="{{ Request::is('panel*') ? 'active' : '' }}"><a href="{{ url('/panel') }}">Panel</a></li>
             <li><a href="#">Feature 1</a></li>
             <li><a href="#">Feature 2</a></li>
             <li><a href="#">Feature 3</a></li>
-            <li><a href="{{ url('/help') }}">Help</a></li>
+            <li class="{{ Request::is('help*') ? 'active' : '' }}"><a href="{{ url('/help') }}">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome, $user</a></li>
