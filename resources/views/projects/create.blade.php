@@ -1,7 +1,7 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    Create a new panel
+    Create a new project
 @endsection
 
 @section('headerDropDown')
@@ -9,13 +9,13 @@
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Create a new panel
+    Home > Projects > Create a new project
 @endsection
 
 @section('content')
 <div class="panel panel-default">
         <div class="panel-heading main-color-bg">
-            <h3 class="panel-title">Create a new panel</h3>
+            <h3 class="panel-title">Create a new project</h3>
         </div>
 
         <div class="row">

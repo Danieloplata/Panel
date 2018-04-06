@@ -1,7 +1,7 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    {{ $panel->projectName }}
+    Homepage
 @endsection
 
 @section('headerDropDown')
@@ -22,7 +22,7 @@
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Displaying panel: {{ $panel->projectName }}
+    Home > Panel > Displaying project: Project Name
 @endsection
 
 @section('content')

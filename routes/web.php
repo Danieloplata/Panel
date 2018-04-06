@@ -17,12 +17,20 @@ Route::get('/', function () {
 });
 
 // Main panel views
-Route::get('/panel', 'PanelController@index');
-//Route::get('/panel/{panel}', 'PanelController@show');
+Route::get('/panel', 'PanelController@index')->name('panelOverview');
+//Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
 // Panel interaction
-Route::get('/panel/create', 'PanelController@create');
-Route::post('/panel', 'PanelController@store')->name('createPanel');
+Route::get('/panel/create', 'PanelController@create')->name('createPanel');
+Route::post('/panel', 'PanelController@store')->name('storePanel');
+
+// Main project views
+Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
+//Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
+
+// Panel interaction
+Route::get('/projects/create', 'ProjectController@create')->name('createProject');
+Route::post('/projects', 'ProjectController@store')->name('storeProject');
 
 // Help section routing
 Route::get('/help', function () {

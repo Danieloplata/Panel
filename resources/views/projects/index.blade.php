@@ -1,7 +1,7 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    Panel overview
+    Projects overview
 @endsection
 
 @section('headerDropDown')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Panel overview
+    Home > Projects > Projects overview
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading main-color-bg">
-            <h3 class="panel-title">Project overview</h3>
+            <h3 class="panel-title">Projects overview</h3>
         </div>
         <div class="panel-body">
             <table class="table table-striped table-hover centre-text">
@@ -31,15 +31,15 @@
                     <th>VIEW</th>
                 </tr>
 
-                @foreach ($panels as $panel)
+                @foreach ($projects as $project)
                 <tr>
-                    <th class="vertical-align">{{ $panel->id }}</th>
-                    <th>{{ $panel->projectName }}</th>
-                    <th>{{ $panel->projectProvider }}</th>
-                    <th>{{ $panel->projectLink }}</th>
-                    <th>{{ $panel->owner }}</th>
-                    <th class="font-green">{{ $panel->status }}</th>
-                    <th><a href="{{ url('/panel') }}/{{ $panel->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
+                    <th class="vertical-align">{{ $project->id }}</th>
+                    <th>{{ $project->projectName }}</th>
+                    <th>{{ $project->projectProvider }}</th>
+                    <th>{{ $project->projectLink }}</th>
+                    <th>{{ $project->owner }}</th>
+                    <th class="font-green">{{ $project->status }}</th>
+                    <th><a href="{{ route('showProject') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
                 @endforeach
 

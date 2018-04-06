@@ -13,8 +13,8 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
-            <li class="{{ Request::is('panel*') ? 'active' : '' }}"><a href="{{ url('/panel') }}">Panel</a></li>
-            <li><a href="#">Feature 1</a></li>
+            <li class="{{ Request::is('projects*') ? 'active' : '' }}"><a href="{{ route('projectsOverview') }}">Projects</a></li>
+            <li class="{{ Request::is('panel*') ? 'active' : '' }}"><a href="{{ route('panelOverview') }}">Panel</a></li>
             <li><a href="#">Feature 2</a></li>
             <li><a href="#">Feature 3</a></li>
             <li class="{{ Request::is('help*') ? 'active' : '' }}"><a href="{{ url('/help') }}">Help</a></li>

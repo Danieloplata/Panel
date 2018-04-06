@@ -8,11 +8,8 @@ class Panel extends Model
 {
 	// Set fillable form fields
 	protected $fillable = [
-		'surveyID',
 		'projectName',
-		'projectLink',
-		'status',
-		'owner'
+		'projectLink'
 	];
 
 	// Display panels with a status of LIVE
@@ -20,4 +17,5 @@ class Panel extends Model
 	{
 		return static::where('status', 'LIVE')->get();
 	}
+
 }
