@@ -25,7 +25,7 @@
                     <th>ID</th>
                     <th>PROJECT</th>
                     <th>PROVIDER</th>
-                    <th>LINK</th>
+                    <th>METHODOLOGY</th>
                     <th>OWNER</th>
                     <th>STATUS</th>
                     <th>VIEW</th>
@@ -35,10 +35,10 @@
                 <tr>
                     <th class="vertical-align">{{ $project->id }}</th>
                     <th>{{ $project->projectName }}</th>
-                    <th>{{ $project->projectProvider }}</th>
-                    <th>{{ $project->projectLink }}</th>
-                    <th>{{ $project->owner }}</th>
-                    <th class="font-green">{{ $project->status }}</th>
+                    <th>Test 1</th>
+                    <th>{{ $project->methodology }}</th>
+                    <th><a href="#">Admin</a></th>
+                    <th class="font-green">LIVE</th>
                     <th><a href="{{ url('/projects') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
                 @endforeach
