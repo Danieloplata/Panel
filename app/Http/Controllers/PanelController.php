@@ -26,6 +26,9 @@ class PanelController extends Controller
 
     public function store()
     {
+        $this->validate(request(), [
+            
+        ]);
 		Panel::create(request([
 			'surveyID',
 			'projectName',

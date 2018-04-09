@@ -22,7 +22,7 @@
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Displaying project: Project Name
+    Home > Panel > Displaying project: {{ $project->projectName }}
 @endsection
 
 @section('content')
@@ -34,95 +34,91 @@
     <div class="panel-body">
         <table class="table table-bordered">
             <tbody align="left">
-                <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Project Details</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Project Name</b></td>
-                  <td width="35%" colspan="2">{{ $panel->projectName }}</td>
-                  <td width="15%" class="active"><b>Project No</b></td>
-                  <td width="35%">{{ $panel->id }}</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Provider</b></td>
-                  <td width="35%" colspan="2">{{ $panel->projectProvider }}</td>
-                  <td width="15%" class="active"><b>Created by</b></td>
-                  <td width="35%">{{ $panel->Owner }}</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Countries</b></td>
-                  <td width="35%" colspan="5">United Kingdom, United States of America, Sweden, India, France, Germany</td>
-                </tr>
-                 <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Panel Usage</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Status</b></td>
-                  <td width="35%" colspan="2" class="font-green">{{ $panel->status }}</td>
-                  <td width="15%" class="active"><b>Total</b></td>
-                  <td width="35%"></td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Completes</b></td>
-                  <td width="35%" colspan="2">782</td>
-                  <td width="15%" class="active"><b>Incompletes</b></td>
-                  <td width="35%">218</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Quota full</b></td>
-                  <td width="35%" colspan="2">250</td>
-                  <td width="15%" class="active"><b>Screenout</b></td>
-                  <td width="35%">250</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Incidence (%)</b></td>
-                  <td width="35%" colspan="2">78%</td>
-                  <td width="15%" class="active"><b>Screenouts (%)</b></td>
-                  <td width="35%">25%</td>
-                </tr>
-                <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Links for Client</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Test link</b></td>
-                  <td width="35%" colspan="5">http://survey.com/survey/{{ $panel->surveyID }}/id/test</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Start link</b></td>
-                  <td width="35%" colspan="5">http://survey.com/panel/surveyID/{{ $panel->surveyID }}/panelID/</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Completion</b></td>
-                  <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/1/panelID/</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Quota full</b></td>
-                  <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/2/panelID/</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Screenout</b></td>
-                  <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/3/panelID/</td>
-                </tr>
-                <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Provider links</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Completion</b></td>
-                  <td width="35%" colspan="5">http://s.cint.com/Survey/Complete?id=</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Quota full</b></td>
-                  <td width="35%" colspan="5">http://s.cint.com/Survey/QuotaFull?id=</td>
-                </tr>
-                <tr>
-                  <td width="15%" class="active"><b>Screenout</b></td>
-                  <td width="35%" colspan="5">http://s.cint.com/Survey/EarlyScreenOut?id=</td>
-                </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project Details</b></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Project No</b></td>
+                <td width="35%" colspan="2"></td>
+                <td width="15%" class="active"><b>Project Name</b></td>
+                <td width="35%">{{ $project->projectName }}</td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Company Contact</b></td>
+                <td width="35%" colspan="2"><a href="mailto:#"></a></td>
+                <td width="15%" class="active"><b>Client Contact</b></td>
+                <td width="35%"><a href="mailto:#"></a></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Methodology</b></td>
+                <td width="35%" colspan="2"></td>
+                <td width="15%" class="active"><b>Total Interviews</b></td>
+                <td width="35%"></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Project Files</b></td>
+                <td width="35%" colspan="5"><a href="#">Click here to open</a></td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Scripting details</b></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Questionnaire by</b></td>
+                <td width="35%" colspan="2"></td>
+                <td width="15%" class="active"><b>Scripting Complete</b></td>
+                <td width="35%"></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Fieldwork Start</b></td>
+                <td width="35%" colspan="2"></td>
+                <td width="15%" class="active"><b>Fieldwork End</b></td>
+                <td width="35%"></td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project Deliverables</b></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Open Questions</b></td>
+                <td width="30%" colspan="2"></td>
+                <td width="20%" class="active"><b>Data spec by</b></td>
+                <td width="30%"></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Raw data file</b></td>
+                <td width="30%" colspan="2"></td>
+                <td width="20%" class="active"><b>Cross Tabs</b></td>
+                <td width="30%"></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Codeframe</b></td>
+                <td width="30%" colspan="2"></td>
+                <td width="20%" class="active"><b>Verbatims</b></td>
+                <td width="30%"></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Tab Format</b></td>
+                <td width="30%" colspan="2"></td>
+                <td width="20%" class="active"><b>Verb Format</b></td>
+                <td width="30%"></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Final Data by</b></td>
+                <td width="30%" colspan="2"></td>
+                <td width="20%" class="active"><b>Amount Quoted</b></td>
+                <td width="30%"></td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Additional Information</b></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Notes</b></td>
+                <td colspan="4">No additional information has been entered</td>
+              </tr>
             </tbody>
         </table>
 
         <div align="center" style="margin-top:15px;margin-bottom:10px;">
-            <button type="submit" class="btn btn-danger" style="margin-right:10px;" onClick="parent.location='{{ url('/panel') }}'">
+            <button type="submit" class="btn btn-danger" style="margin-right:10px;" onClick="parent.location='{{ url('/projects') }}'">
                 <span class="glyphicon glyphicon-arrow-left"></span> 
                 back to projects
             </button>

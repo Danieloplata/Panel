@@ -16,7 +16,7 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-		return view('project/show', compact('project'));
+		return view('projects/show', compact('project'));
     }
 
     public function create()
@@ -27,8 +27,8 @@ class ProjectController extends Controller
     public function store()
     {
 		Project::create(request([
-			'Example',
-			]));
+			'projectName'
+		]));
 
 		return redirect('/');
     }

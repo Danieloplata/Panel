@@ -124,7 +124,7 @@
         <div align="center" style="margin-top:15px;margin-bottom:10px;">
             <button type="submit" class="btn btn-danger" style="margin-right:10px;" onClick="parent.location='{{ url('/panel') }}'">
                 <span class="glyphicon glyphicon-arrow-left"></span> 
-                back to projects
+                back to panels
             </button>
         </div>
     </div>

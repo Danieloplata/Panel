@@ -39,7 +39,7 @@
                     <th>{{ $project->projectLink }}</th>
                     <th>{{ $project->owner }}</th>
                     <th class="font-green">{{ $project->status }}</th>
-                    <th><a href="{{ route('showProject') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
+                    <th><a href="{{ url('/projects') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
                 @endforeach
 
