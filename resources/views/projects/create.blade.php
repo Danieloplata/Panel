@@ -1,120 +1,150 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    Create a new project
+  Create new project
 @endsection
 
 @section('headerDropDown')
-    
+
 @endsection
 
 @section('breadcrumb')
-    Home > Projects > Create a new project
+    Home > Projects > New project
 @endsection
 
 @section('content')
+<!-- Latest projects -->
 <div class="panel panel-default">
-        <div class="panel-heading main-color-bg">
-            <h3 class="panel-title">Create a new project</h3>
+    <div class="panel-heading main-color-bg">
+        <h3 class="panel-title">Create a new project</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <tbody align="left">
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project Details</b></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Project Name</b></td>
+                <td width="35%" colspan="2"><input type="text" class="textInput" name="projectName" id="projectName" placeholder="Enter project name" required/></td>
+                <td width="20%" class="active"><b>Amount Quoted</b></td>
+                <td width="30%"><input type="text" class="textInput" name="projectName" id="projectName" placeholder="Enter amount e.g. £20,000" required/></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Company Contact</b></td>
+                <td width="35%" colspan="2"><input type="text" class="textInput" name="companyEmail" id="companyEmail" placeholder="Enter your email address" required/></td>
+                <td width="15%" class="active"><b>Client Contact</b></td>
+                <td width="35%"><input type="text" class="textInput" name="clientEmail" id="clientEmail" placeholder="Enter client's email address" required/></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Methodology</b></td>
+                <td width="35%" colspan="2">
+                  <select name="methodology" id="methodology" class="textInput" required/>
+                    <option selected="selected" disabled="disabled">Please Select</option>
+                    <option value="Online Survey">Online survey</option>
+                    <option value="Online CAPI">Online CAPI</option>
+                    <option value="Offline iPad">Offline CAPI</option>
+                    <option value="Pen and Paper">Pen and Paper</option>
+                    <option value="Other">Other (Specify in notes)</option>
+                  </select>
+                </td>
+                <td width="15%" class="active"><b>Total Interviews</b></td>
+                <td width="35%"><input type="text" class="textInput" name="totalInterviews" id="totalInterviews" placeholder="Enter the total number of interviews" required/></td>
+              </tr>
+              <tr>
+
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project timeline</b></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Questionnaire by</b></td>
+                <td width="35%" colspan="2"><input type="input" class="textInput" id="questionnaireBy" name="questionnaireBy" placeholder="Click to select date" required/></td>
+                <td width="15%" class="active"><b>Scripting Complete</b></td>
+                <td width="35%"><input type="input" class="textInput" id="questionnaireBy" name="questionnaireBy" placeholder="Click to select date" required/></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Fieldwork Start</b></td>
+                <td width="35%" colspan="2"><input type="input" class="textInput" id="fieldStart" name="fieldStart" placeholder="Click to select date" required/></td>
+                <td width="15%" class="active"><b>Fieldwork End</b></td>
+                <td width="35%"><input type="input" class="textInput" id="fieldEnd" name="fieldEnd" placeholder="Click to select date" required/></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Data spec by</b></td>
+                <td width="30%" colspan="2"><input type="input" class="textInput" id="dataSpecBy" name="dataSpecBy" placeholder="Click to select date" required/></td>
+                <td width="20%" class="active"><b>Final Data by</b></td>
+                <td width="30%"><input type="input" class="textInput" id="finalDataBy" name="finalDataBy" placeholder="Click to select date" required/></td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project panel</b></td>
+              </tr>
+              <tr>
+                <td width="15%" class="active"><b>Panel status</b></td>
+                <td width="35%" colspan="2" class="font-green">LIVE</td>
+                <td width="15%" class="active"><b>View panel details</b></td>
+                <td width="35%"><a href="#">Click here to open</a></td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project deliverables</b></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Open Questions</b></td>
+                <td width="30%" colspan="2"><input type="input" class="textInput" id="openQuestions" name="openQuestions" placeholder="Enter number of open questions" required/></td>
+                <td width="20%" class="active"><b>Codeframe</b></td>
+                <td width="30%"><input type="checkbox" class="custom-control-input" id="codeframeRequired" name="codeframeRequired"></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Raw data file</b></td>
+                 <td width="35%" colspan="2">
+                  <select name="rawDataFormat" id="rawDataFormat" class="textInput" required/>
+                    <option selected="selected" disabled="disabled">Please Select</option>
+                    <option value="Excel">Excel</option>
+                    <option value="SPSS">SPSS</option>
+                    <option value="ASCI">ASCI</option>
+                    <option value="Other">Other (Specify in notes)</option>
+                  </select>
+                </td>
+                <td width="20%" class="active"><b>Cross Tabs</b></td>
+                <td width="30%"><input type="checkbox" class="custom-control-input" id="crossTabsRequired" name="crossTabsRequired"></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Tab Format</b></td>
+                <td width="35%" colspan="2">
+                  <select name="tabFormat" id="tabFormat" class="textInput" required/>
+                    <option selected="selected" disabled="disabled">Please Select</option>
+                    <option value="Excel">Excel</option>
+                    <option value="Word">Word</option>
+                    <option value="PDF">PDF</option>
+                    <option value="Other">Other (Specify in notes)</option>
+                  </select>
+                </td>
+                <td width="20%" class="active"><b>Verb Format</b></td>
+                <td width="35%" colspan="2">
+                  <select name="verbFormat" id="verbFormat" class="textInput" required/>
+                    <option selected="selected" disabled="disabled">Please Select</option>
+                    <option value="Excel">Excel</option>
+                    <option value="Word">Word</option>
+                    <option value="PDF">PDF</option>
+                    <option value="Other">Other (Specify in notes)</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Additional Information</b></td>
+              </tr>
+              <tr>
+                <td width="20%" class="active"><b>Notes</b></td>
+                <td colspan="4"><textarea style="resize:vertical; outline: none; border:none; margin-right:0px;" rows="4" cols="90" id="notes" name="notes"></textarea></td>
+              </tr>
+            </tbody>
+        </table>
+
+        <div align="center" style="margin-top:15px;margin-bottom:10px;">
+            <button type="submit" class="btn btn-danger" style="margin-right:10px;" onClick="parent.location='{{ url('/projects') }}'">
+                Create the project
+                <span class="glyphicon glyphicon-arrow-right"></span> 
+            </button>
         </div>
-
-        <div class="row">
-
-            <div class="col-lg-2">
-            </div>
-
-            <div class="col-lg-8">
-
-                <!-- Start of form body {{ url('/panel') }} -->
-                <div class="panel-body">
-                    <form id="createPanelForm" class="form-horizontal" role="form" method="POST" action="{{ route('storePanel') }}";>
-                    <!-- hidden CSRF token field -->
-                        @csrf
-                    <!-- hidden CSRF token field -->
-                    <!--<fieldset>-->
-                        <div class="form-group">
-                          <label for="projectName" class="col-lg-3 control-label">Project name</label>
-                          <div class="col-lg-8">
-                            <input type="text" class="form-control" name="projectName" id="projectName" placeholder="Enter name of project" required>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="projectLink" class="col-lg-3 control-label">Project link</label>
-                          <div class="col-lg-8">
-                            <input type="text" class="form-control" name="projectLink" id="projectLink" placeholder="Enter survey link" required>
-                          </div>
-                        </div>
-                        <div id="allowedCountriesInput">
-                            <div class="form-group">
-                              <label for="select" class="col-lg-3 control-label">Countries</label>
-                              <div class="col-lg-8">
-                                <select class="form-control" name="allowedCountries" id="allowedCountries" multiple="multiple">
-                                    <option>Test</option>
-                                </select>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-lg-3 control-label">Panel type</label>
-                          <div class="col-lg-8">
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="type" id="typeNew" value="1" checked="">
-                                New provider
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="type" id="typeExisting" value="2">
-                                Existing provider
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div id="newProviderInput">
-                            <div class="form-group">
-                              <label for="providerName" class="col-lg-3 control-label">Provider name</label>
-                              <div class="col-lg-8">
-                                <input type="text" class="form-control" name="providerName" id="providerName" placeholder="Enter name of company">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="completeLink" class="col-lg-3 control-label">Redirect links</label>
-                              <div class="col-lg-8">
-                                <input type="text" class="form-control" name="completeLink" id="completeLink" placeholder="Enter completion link">
-                                <br />
-                                <input type="text" class="form-control" name="quotaFullLink" id="quotaFullLink" placeholder="Enter quota full link">
-                                <br />
-                                <input type="text" class="form-control" name="screenoutLink" id="screenoutLink" placeholder="Enter screenout link">
-                              </div>
-                            </div>
-                        </div>
-                        <div id="existingProviderInput">
-                            <div class="form-group">
-                              <label for="select" class="col-lg-3 control-label">Provider</label>
-                              <div class="col-lg-8">
-                                <select class="form-control" name="existingProvider" id="existingProvider">
-                                    <option value="" disabled selected>Select an existing provider</option>
-                                    <option value="1">Populate from database</option>   
-                                </select>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="col-lg-6 col-lg-offset-4">
-                          <br />
-                            <button type="reset" class="btn btn-default">Reset</button>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                          </div>
-                        </div>
-                      <!--</fieldset>-->
-                    </form>
-                </div>
-                <!-- End of field body -->
-            </div>
-
-            <div class="col-lg-2">
-            </div>
-
-        </div>
+    </div>
+</div>
 @endsection

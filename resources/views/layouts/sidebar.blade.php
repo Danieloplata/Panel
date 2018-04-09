@@ -16,14 +16,14 @@
 <div class="well well-progress-bars">
     <h4>Frontend Completion</h4>
     <div class="progress">
-      <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-        30%
+      <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+        50%
       </div>
     </div>
     <h4>Backend Completion</h4>
     <div class="progress">
-        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-            10%
+        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%">
+            15%
         </div>
     </div>
 </div>

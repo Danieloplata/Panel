@@ -16,7 +16,7 @@
             <li class="{{ Request::is('projects*') ? 'active' : '' }}"><a href="{{ route('projectsOverview') }}">Projects</a></li>
             <li class="{{ Request::is('panel*') ? 'active' : '' }}"><a href="{{ route('panelOverview') }}">Panel</a></li>
             <li><a href="#">Feature 2</a></li>
-            <li><a href="#">Feature 3</a></li>
+            <li><a href="#">Discussion</a></li>
             <li class="{{ Request::is('help*') ? 'active' : '' }}"><a href="{{ url('/help') }}">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

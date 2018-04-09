@@ -26,11 +26,11 @@ Route::post('/panel', 'PanelController@store')->name('storePanel');
 
 // Main project views
 Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
-Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
+//Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
 
-// Panel interaction
-//Route::get('/projects/create', 'ProjectController@create')->name('createProject');
-//Route::post('/projects', 'ProjectController@store')->name('storeProject');
+// Project interaction
+Route::get('/projects/create', 'ProjectController@create')->name('createProject');
+Route::post('/projects', 'ProjectController@store')->name('storeProject');
 
 // Help section routing
 Route::get('/help', function () {
