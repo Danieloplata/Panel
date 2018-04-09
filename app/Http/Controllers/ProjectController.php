@@ -26,10 +26,31 @@ class ProjectController extends Controller
 
     public function store()
     {
-		Project::create(request([
-			'projectName'
-		]));
+		$this->validate(request(), [
+            
+        ]);
+        Project::create(request([
+            'projectName',
+            'amountQuoted',
+            'companyEmail',
+            'clientEmail',
+            'methodology',
+            'totalInterviews',
+            'questionnaireBy',
+            'scriptedBy',
+            'fieldStart',
+            'fieldEnd',
+            'dataSpecBy',
+            'finalDataBy',
+            'openQuestions',
+            'codeframeRequired',
+            'rawDataFormat',
+            'crossTabsRequired',
+            'tabFormat',
+            'verbFormat',
+            'notes'
+            ]));
 
-		return redirect('/');
+        return redirect('/');
     }
 }

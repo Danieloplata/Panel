@@ -19,6 +19,10 @@
         <h3 class="panel-title">Create a new project</h3>
     </div>
     <div class="panel-body">
+      <form id="createPanelForm" class="form-horizontal" role="form" method="POST" action="{{ route('storeProject') }}";>
+        <!-- hidden CSRF token field -->
+            @csrf
+        <!-- hidden CSRF token field -->
         <table class="table table-bordered">
             <tbody align="left">
               <tr>
@@ -28,10 +32,10 @@
                 <td width="15%" class="active"><b>Project Name</b></td>
                 <td width="35%" colspan="2"><input type="text" class="textInput" name="projectName" id="projectName" placeholder="Enter project name" required/></td>
                 <td width="20%" class="active"><b>Amount Quoted</b></td>
-                <td width="30%"><input type="text" class="textInput" name="projectName" id="projectName" placeholder="Enter amount e.g. £20,000" required/></td>
+                <td width="30%"><input type="text" class="textInput" name="amountQuoted" id="amountQuoted" placeholder="Enter amount e.g. £20,000" required/></td>
               </tr>
               <tr>
-                <td width="15%" class="active"><b>Company Contact</b></td>
+                <td width="15%" class="active"><b>Contact</b></td>
                 <td width="35%" colspan="2"><input type="text" class="textInput" name="companyEmail" id="companyEmail" placeholder="Enter your email address" required/></td>
                 <td width="15%" class="active"><b>Client Contact</b></td>
                 <td width="35%"><input type="text" class="textInput" name="clientEmail" id="clientEmail" placeholder="Enter client's email address" required/></td>
@@ -61,7 +65,7 @@
                 <td width="15%" class="active"><b>Questionnaire by</b></td>
                 <td width="35%" colspan="2"><input type="input" class="textInput" id="questionnaireBy" name="questionnaireBy" placeholder="Click to select date" required/></td>
                 <td width="15%" class="active"><b>Scripting Complete</b></td>
-                <td width="35%"><input type="input" class="textInput" id="questionnaireBy" name="questionnaireBy" placeholder="Click to select date" required/></td>
+                <td width="35%"><input type="input" class="textInput" id="scriptedBy" name="scriptedBy" placeholder="Click to select date" required/></td>
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Fieldwork Start</b></td>
@@ -74,15 +78,6 @@
                 <td width="30%" colspan="2"><input type="input" class="textInput" id="dataSpecBy" name="dataSpecBy" placeholder="Click to select date" required/></td>
                 <td width="20%" class="active"><b>Final Data by</b></td>
                 <td width="30%"><input type="input" class="textInput" id="finalDataBy" name="finalDataBy" placeholder="Click to select date" required/></td>
-              </tr>
-              <tr>
-                <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project panel</b></td>
-              </tr>
-              <tr>
-                <td width="15%" class="active"><b>Panel status</b></td>
-                <td width="35%" colspan="2" class="font-green">LIVE</td>
-                <td width="15%" class="active"><b>View panel details</b></td>
-                <td width="35%"><a href="#">Click here to open</a></td>
               </tr>
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project deliverables</b></td>
@@ -138,13 +133,13 @@
               </tr>
             </tbody>
         </table>
-
         <div align="center" style="margin-top:15px;margin-bottom:10px;">
-            <button type="submit" class="btn btn-danger" style="margin-right:10px;" onClick="parent.location='{{ url('/projects') }}'">
+            <button type="submit" class="btn btn-danger" style="margin-right:10px;">
                 Create the project
                 <span class="glyphicon glyphicon-arrow-right"></span> 
             </button>
         </div>
+      </form>
     </div>
 </div>
 @endsection
