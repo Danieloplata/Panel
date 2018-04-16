@@ -18,15 +18,13 @@ Route::get('/', function () {
 
 // Main panel views
 Route::get('/panel', 'PanelController@index')->name('panelOverview');
-//Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
-
-// Panel interaction
 Route::get('/panel/create', 'PanelController@create')->name('createPanel');
 Route::post('/panel', 'PanelController@store')->name('storePanel');
+Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
 // Main project views
 Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
-//Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
+Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
 
 // Project interaction
 Route::get('/projects/create', 'ProjectController@create')->name('createProject');
