@@ -23,14 +23,14 @@ If possible, I would also like to create built-in screeners - with the possibili
 
 ## Screenshots
 
-# Homepage
+### Homepage
 
 ![Homepage](/screenshots/homepage.PNG?raw=true "Homepage")
 
-# Projects
+### Projects
 
 ![Projects](/screenshots/projects.PNG?raw=true "Projects")
 
-# Project overview
+### Project overview
 
 ![Project overview](/screenshots/projectoverview.PNG?raw=true "Project overview")
