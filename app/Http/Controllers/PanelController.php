@@ -27,16 +27,12 @@ class PanelController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            
+            'projectName' => 'required|max:150',
+            'projectLink' => 'required|url',
+            'status' => 'required',
+            'owner' => 'required'
         ]);
-		Panel::create(request([
-			'surveyID',
-			'projectName',
-			'projectLink',
-			'status',
-			'owner'
-			]));
-
+		Panel::create(request()->all());
 		return redirect('/');
     }
 }

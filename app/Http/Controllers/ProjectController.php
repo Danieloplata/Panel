@@ -27,30 +27,27 @@ class ProjectController extends Controller
     public function store()
     {
 		$this->validate(request(), [
-            
+            'projectName' => 'required',
+            'amountQuoted' => 'required',
+            'companyEmail' => 'required|email',
+            'clientEmail' => 'required|email',
+            'methodology' => 'required',
+            'totalInterviews' => 'required|numeric',
+            'questionnaireBy' => 'required|date',
+            'scriptedBy' => 'required|date',
+            'fieldStart' => 'required|date',
+            'fieldEnd' => 'required|date',
+            'dataSpecBy' => 'required|date',
+            'finalDataBy' => 'required|date',
+            'openQuestions' => 'required|numeric',
+            'codeframeRequired' => 'required',
+            'rawDataFormat' => 'required',
+            'crossTabsRequired' => 'required',
+            'tabFormat' => 'required',
+            'verbFormat' => 'required',
+            'notes' => 'required'
         ]);
-        Project::create(request([
-            'projectName',
-            'amountQuoted',
-            'companyEmail',
-            'clientEmail',
-            'methodology',
-            'totalInterviews',
-            'questionnaireBy',
-            'scriptedBy',
-            'fieldStart',
-            'fieldEnd',
-            'dataSpecBy',
-            'finalDataBy',
-            'openQuestions',
-            'codeframeRequired',
-            'rawDataFormat',
-            'crossTabsRequired',
-            'tabFormat',
-            'verbFormat',
-            'notes'
-            ]));
-
+        Project::create(request()->all());
         return redirect('/');
     }
 }
