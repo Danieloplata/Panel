@@ -20,3 +20,17 @@ Some potential benefits of this might be
 - Monitoring the progress of a survey without direct access to the data
 
 If possible, I would also like to create built-in screeners - with the possibility of allowing conditional bypasses of checks or advanced survey routing.
+
+## Screenshots
+
+### Homepage
+
+![Homepage](/screenshots/homepage.PNG?raw=true "Homepage")
+
+### Projects
+
+![Projects](/screenshots/projects.PNG?raw=true "Projects")
+
+### Project overview
+
+![Project overview](/screenshots/projectoverview.PNG?raw=true "Project overview")
