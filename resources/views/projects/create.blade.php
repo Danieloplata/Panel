@@ -25,6 +25,7 @@
         <!-- hidden CSRF token field -->
         <table class="table table-bordered">
             <tbody align="left">
+              @include('layouts/errors')
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project Details</b></td>
               </tr>
