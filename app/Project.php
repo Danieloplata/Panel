@@ -28,4 +28,10 @@ class Project extends Model
         'verbFormat',
         'notes'
 	];
+
+    public function panels()
+    {
+        return $this->hasMany(Panel::class);
+    }
+
 }

@@ -12,10 +12,4 @@ class Panel extends Model
 		'projectLink'
 	];
 
-	// Display panels with a status of LIVE
- 	public static function activePanels()
-	{
-		return static::where('status', 'LIVE')->get();
-	}
-
 }
