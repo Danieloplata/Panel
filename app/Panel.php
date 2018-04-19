@@ -12,4 +12,9 @@ class Panel extends Model
 		'projectLink'
 	];
 
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
 }

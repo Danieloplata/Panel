@@ -8,6 +8,7 @@ use App\Panel;
 
 class PanelController extends Controller
 {
+
     public function index()
     {
     	$panels = Panel::latest()->get();
