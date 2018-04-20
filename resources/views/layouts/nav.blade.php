@@ -20,8 +20,21 @@
             <li class="{{ Request::is('help*') ? 'active' : '' }}"><a href="{{ url('/help') }}">Help</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Welcome, $user</a></li>
-            <li><a href="#">Logout</a></li>
+            @guest
+              <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+              <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+            @else
+              <li><a href="#">Welcome, {{ Auth::user()->name }}</a></li>
+              <li>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                </a>
+              </li>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            @endguest
           </ul>
         </div><!--/.nav-collapse -->
       </div>
