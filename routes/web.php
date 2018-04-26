@@ -34,6 +34,6 @@ Route::get('/help', function () {
 Route::get('/help/{topic}', function ($topic) {
 	return view('help/show');
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Authentication routes
+Auth::routes();
