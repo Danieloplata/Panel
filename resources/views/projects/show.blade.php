@@ -8,14 +8,14 @@
     <div class="col-md-2" style="float: right;">
       <div class="dropdown create" style="float: right;">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Panel options
+          Project options
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a href="#"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> Mark as complete</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit panel</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit project</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export data to CSV</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete panel</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete project</a></li>
         </ul>
       </div>
   </div>
@@ -45,7 +45,7 @@
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Company Contact</b></td>
-                <td width="35%" colspan="2"><a href="mailto:#">company.example@email.com</a></td>
+                <td width="35%" colspan="2"><a href="mailto:#">{{ $project->user->email }}</a></td>
                 <td width="15%" class="active"><b>Client Contact</b></td>
                 <td width="35%"><a href="mailto:#">client.example@email.com</a></td>
               </tr>
