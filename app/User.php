@@ -32,4 +32,9 @@ class User extends Authenticatable
         return $this->hasMany(Project::class);
     }
 
+    public function createProject(Project $project)
+    {
+        $this->projects()->save($project);
+    }
+
 }
