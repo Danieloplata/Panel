@@ -30,7 +30,9 @@ class ProjectsTableSeeder extends Seeder
 			'crossTabsRequired' => 'on',
 			'tabFormat' => 'Excel',
 			'verbFormat' => 'Excel',
-			'notes' => 'Additional notes go here'
+			'notes' => 'Additional notes go here',
+			'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 		]);
     }
 }
