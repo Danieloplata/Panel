@@ -28,7 +28,7 @@
 - Respondents table (P1)
 	- Each panel may have many respondents
 
-### Respondent Checks
+### Respondent checks
 
 - Needs to create respondent in a respondents table with
 	- Basic fingerprinting ID/IP (P1)
