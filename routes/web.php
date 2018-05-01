@@ -20,6 +20,9 @@ Route::get('/panel/create', 'PanelController@create')->name('createPanel');
 Route::post('/panel', 'PanelController@store')->name('storePanel');
 Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
+// Panel Redirect
+Route::get('/start', 'PanelController@start')->name('panelStart');
+
 // Project views
 Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
 Route::get('/projects/create', 'ProjectController@create')->name('createProject');

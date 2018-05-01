@@ -10,7 +10,7 @@ class PanelController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['start']]);
     }
     
     public function index()
@@ -39,5 +39,15 @@ class PanelController extends Controller
         ]);
 		Panel::create(request()->all());
 		return redirect('/');
+    }
+
+    public function start()
+    {
+        return redirect('https://google.co.uk');
+    }
+
+    public function passback()
+    {
+        return redirect('https://google.co.uk');
     }
 }
