@@ -30,13 +30,8 @@ Route::post('/projects', 'ProjectController@store')->name('storeProject');
 Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
 
 // Help section routing
-Route::get('/help', function () {
-		return view('help/index');
-});
-
-Route::get('/help/{topic}', function ($topic) {
-	return view('help/show');
-});
+Route::get('/docs', 'DocumentationController@index')->name('DocumentationOverview');
+Route::get('/docs/{topic}', 'DocumentationController@show')->name('showDocumentationTopic');
 
 // Authentication routes
 Auth::routes();
