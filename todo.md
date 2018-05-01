@@ -34,16 +34,16 @@
 	- Basic fingerprinting ID/IP (P1)
 	- More indepth fingerprinting Browser/Cookie (P3)
 - Each new respondent will be checked against existing respondents to discourage duplicates (P1)
-- Check country against allowed countries
+- Check country against allowed countries (P1)
 	- Select2 for forms?
-- Add the ability to limit survey to certain devices/os
+- Add the ability to limit survey to certain devices/os (P3)
 	- Perhaps as a part of creating a panel
-	- mobiledetect.net
+	- mobiledetect.net?
 
 ### Email notifications
 
 - Email linked users when project is created/updated/marked complete (P3)
 - Email owner of project if a high frequency of errors/screenouts/quotafulls (P3)
 	- How will this be calculated?
-- Email owner of a project when total sum of all respondents marked as complete, for all panels linked to a project is equal to the total completes set on project
+- Email owner of a project when total sum of all respondents marked as complete, for all panels linked to a project is equal to the total completes set on project (P3)
 
