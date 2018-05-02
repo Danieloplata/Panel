@@ -47,3 +47,6 @@
 	- How will this be calculated?
 - Email owner of a project when total sum of all respondents marked as complete, for all panels linked to a project is equal to the total completes set on project (P3)
 
+### Logging
+
+- Log all errors per panel
