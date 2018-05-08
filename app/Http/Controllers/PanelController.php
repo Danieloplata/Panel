@@ -16,17 +16,17 @@ class PanelController extends Controller
     public function index()
     {
     	$panels = Panel::latest()->get();
-		return view('panel/index', compact('panels'));
+	  	return view('panel/index', compact('panels'));
     }
 
     public function show(Panel $panel)
     {
-		return view('panel/show', compact('panel'));
+		  return view('panel/show', compact('panel'));
     }
 
     public function create()
     {
-		return view('panel/create');
+		  return view('panel/create');
     }
 
     public function store()
@@ -37,8 +37,8 @@ class PanelController extends Controller
             'status' => 'required',
             'owner' => 'required'
         ]);
-		Panel::create(request()->all());
-		return redirect('/');
+		  Panel::create(request()->all());
+		  return redirect('/');
     }
 
     public function start()
