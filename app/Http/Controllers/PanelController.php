@@ -24,9 +24,9 @@ class PanelController extends Controller
 		  return view('panel/show', compact('panel'));
     }
 
-    public function create()
+    public function create($projectID)
     {
-		  return view('panel/create');
+		return view('panel/create');
     }
 
     public function store()

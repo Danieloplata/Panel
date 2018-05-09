@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');;
 
 // Panel views
 Route::get('/panel', 'PanelController@index')->name('panelOverview');
-Route::get('/panel/create', 'PanelController@create')->name('createPanel');
+Route::get('/panel/create/{projectID}', 'PanelController@create')->name('createPanel');
 Route::post('/panel', 'PanelController@store')->name('storePanel');
 Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 

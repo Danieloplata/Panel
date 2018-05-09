@@ -93,14 +93,10 @@
                 <td width="35%" colspan="2" class="font-green">{{ $panel->status }}</td>
               </tr>
               @endforeach
-              
-              @if ($project->panels->count() == 0)
               <tr>
                 <td width="20%" class="active"><b>Panels</b></td>
-                <td colspan="4">No panels exist for this project.</td>
+                <td colspan="4"><a href="{{ url('/panel/create/') }}/{{ $project->id }}"><span class="glyphicon glyphicon glyphicon-plus font-green" aria-hidden="true"></span> Add a panel to this project</a></td>
               </tr>
-              @endif
-
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project deliverables</b></td>
               </tr>
@@ -121,9 +117,6 @@
                 <td width="30%" colspan="2">{{ $project->tabFormat }}</td>
                 <td width="20%" class="active"><b>Verb Format</b></td>
                 <td width="30%">{{ $project->verbFormat }}</td>
-              </tr>
-              <tr>
-                
               </tr>
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Additional Information</b></td>
