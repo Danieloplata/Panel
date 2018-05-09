@@ -85,14 +85,22 @@
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project panels</b></td>
               </tr>
+              @foreach ($project->panels as $panel)
               <tr>
-                @foreach ($project->panels as $panel)
                 <td width="15%" class="active"><b>Panel name</b></td>
-                <td width="35%" colspan="2" class="font-green">{{ $panel->panelName }}</td>
+                <td width="35%" colspan="2">{{ $panel->panelName }}</td>
                 <td width="15%" class="active"><b>Panel status</b></td>
                 <td width="35%" colspan="2" class="font-green">{{ $panel->status }}</td>
-                @endforeach
               </tr>
+              @endforeach
+              
+              @if ($project->panels->count() == 0)
+              <tr>
+                <td width="20%" class="active"><b>Panels</b></td>
+                <td colspan="4">No panels exist for this project.</td>
+              </tr>
+              @endif
+
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project deliverables</b></td>
               </tr>
