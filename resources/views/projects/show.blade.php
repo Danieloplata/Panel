@@ -95,7 +95,7 @@
               @endforeach
               <tr>
                 <td width="20%" class="active"><b>Panels</b></td>
-                <td colspan="4"><a href="{{ url('/panel/create/') }}/{{ $project->id }}"><span class="glyphicon glyphicon glyphicon-plus font-green" aria-hidden="true"></span> Add a panel to this project</a></td>
+                <td colspan="4"><a href="{{ url('/panel/create/') }}/{{ $project->id }}"><span class="glyphicon glyphicon-plus-sign font-green" aria-hidden="true"></span> Add a panel to this project</a></td>
               </tr>
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project deliverables</b></td>
