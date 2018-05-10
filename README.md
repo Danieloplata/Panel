@@ -23,6 +23,8 @@ If possible, I would also like to create built-in screeners - with the possibili
 
 ## Screenshots
 
+Please note these are early design screenshots, subject to change and some data may currently be hard coded
+
 ### Homepage
 
 ![Homepage](/screenshots/homepage.PNG?raw=true "Homepage")
