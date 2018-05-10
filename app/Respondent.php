@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Respondent extends Model
 {
-
-	
-
     public function panel()
     {
         return $this->belongsToMany(Panel::class);

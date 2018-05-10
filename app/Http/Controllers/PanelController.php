@@ -10,7 +10,7 @@ class PanelController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['start']]);
+        $this->middleware('auth', ['except' => ['start', 'passback']]);
     }
     
     public function index()
@@ -32,7 +32,7 @@ class PanelController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'projectName' => 'required|max:150',
+            'panelName' => 'required|max:150',
             'projectLink' => 'required|url',
             'status' => 'required',
             'owner' => 'required'
@@ -41,13 +41,20 @@ class PanelController extends Controller
 		  return redirect('/');
     }
 
-    public function start()
+    public function start($panelID, $respondentID)
     {
-        return redirect('https://google.co.uk');
+        // Record respondent ID and any additional data in the Respondents table with the linked panelID
+        dd($panelID, $respondentID);
+
+        // Get the panel redirect link, add the respondentID and redirect to it
+        return redirect('https://google.com/index.php/12345?respondentID='.$respondentID);
     }
 
-    public function passback()
+    public function passback($panelID, $status, $respondentID)
     {
+        dd($panelID, $status, $respondentID);
+
+        // Get the provider redirect and redirect there
         return redirect('https://google.co.uk');
     }
 }

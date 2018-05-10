@@ -21,7 +21,8 @@ Route::post('/panel', 'PanelController@store')->name('storePanel');
 Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
 // Panel Redirect
-Route::get('/start/{projectid}/{respondentid}', 'PanelController@start')->name('panelStart');
+Route::get('/start/{panelid}/{respondentid}', 'PanelController@start')->name('panelStart');
+Route::get('/passback/{panelid}/{status}/{respondentid}', 'PanelController@passback')->name('panelPassback');
 
 // Project views
 Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
