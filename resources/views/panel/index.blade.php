@@ -17,7 +17,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading main-color-bg">
-            <h3 class="panel-title">Project overview</h3>
+            <h3 class="panel-title">Panels overview</h3>
         </div>
         <div class="panel-body">
             <table class="table table-striped table-hover centre-text">
