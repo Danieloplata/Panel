@@ -38,7 +38,7 @@
                     <th>{{ $project->methodology }}</th>
                     <th>{{ $project->fieldEnd }}</th>
                     <th><a href="#">{{ $project->user_id }}</a></th>
-                    <th class="font-green">LIVE</th>
+                    <th class="font-green">{{ $project->status }}</th>
                     <th><a href="{{ url('/projects') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
                 @endforeach
