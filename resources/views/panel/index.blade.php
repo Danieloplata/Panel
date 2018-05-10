@@ -34,10 +34,10 @@
                 @foreach ($panels as $panel)
                 <tr>
                     <th class="vertical-align">{{ $panel->id }}</th>
-                    <th>{{ $panel->projectName }}</th>
+                    <th>{{ $panel->project->projectName }}</th>
                     <th>{{ $panel->projectProvider }}</th>
                     <th>{{ $panel->projectLink }}</th>
-                    <th>{{ $panel->owner }}</th>
+                    <th>{{ $panel->project->owner }}</th>
                     <th class="font-green">{{ $panel->status }}</th>
                     <th><a href="{{ url('/panel') }}/{{ $panel->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
