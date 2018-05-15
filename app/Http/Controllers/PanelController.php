@@ -10,7 +10,7 @@ class PanelController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['start', 'passback']]);
+        $this->middleware('auth');
     }
     
     public function index()
@@ -39,23 +39,5 @@ class PanelController extends Controller
         ]);
 		  Panel::create(request()->all());
 		  return redirect('/');
-    }
-
-    public function start($panelID, $respondentID)
-    {
-        // Record respondent ID and any additional data in the Respondents table with the linked panelID
-        dd($panelID, $respondentID);
-
-        // Get the panel redirect link, add the respondentID and redirect to it
-        return redirect('https://google.com/index.php/12345?respondentID='.$respondentID);
-    }
-
-    public function passback($panelID, $status, $respondentID)
-    {
-        // Update respondent status
-        dd($panelID, $status, $respondentID);
-
-        // Get the provider redirect and redirect there
-        return redirect('https://google.co.uk');
     }
 }

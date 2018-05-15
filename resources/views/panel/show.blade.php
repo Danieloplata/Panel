@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Project Name</b></td>
-                  <td width="35%" colspan="2">{{ $panel->projectName }}</td>
+                  <td width="35%" colspan="2">{{ $panel->project->projectName }}</td>
                   <td width="15%" class="active"><b>Project No</b></td>
                   <td width="35%">{{ $panel->id }}</td>
                 </tr>
@@ -47,7 +47,7 @@
                   <td width="15%" class="active"><b>Provider</b></td>
                   <td width="35%" colspan="2">{{ $panel->projectProvider }}</td>
                   <td width="15%" class="active"><b>Created by</b></td>
-                  <td width="35%">Display-Owner-Here</td>
+                  <td width="35%">{{ $panel->user->name }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Countries</b></td>
@@ -85,23 +85,23 @@
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Test link</b></td>
-                  <td width="35%" colspan="5">http://survey.com/survey/{{ $panel->surveyID }}/id/test</td>
+                  <td width="35%" colspan="5">{{ url('/') }}/start/{{ $panel->id }}/test</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Start link</b></td>
-                  <td width="35%" colspan="5">http://survey.com/panel/surveyID/{{ $panel->surveyID }}/panelID/</td>
+                  <td width="35%" colspan="5">{{ url('/') }}/start/{{ $panel->id }}/append-id-here</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Completion</b></td>
-                  <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/1/panelID/</td>
+                  <td width="35%" colspan="5">{{ url('/') }}/passback/{{ $panel->id }}/complete/append-id-here</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Quota full</b></td>
-                  <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/2/panelID/</td>
+                  <td width="35%" colspan="5">{{ url('/') }}/passback/{{ $panel->id }}/quotafull/append-id-here</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Screenout</b></td>
-                  <td width="35%" colspan="5">http://survey.com/passback/surveyID/{{ $panel->surveyID }}/status/3/panelID/</td>
+                  <td width="35%" colspan="5">{{ url('/') }}/passback/{{ $panel->id }}/screenout/append-id-here</td>
                 </tr>
                 <tr>
                   <td class="panel-heading main-color-bg" colspan="5">Provider links</td>
