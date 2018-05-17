@@ -17,6 +17,12 @@ class RedirectController extends Controller
 
     public function start($panelID, $respondentID) {
 
+    	// Perform checks on respondent
+    		// ip + useragent check
+    		// country check
+    		// respondent id + panel id check
+    		// cookie check
+
     	$panel = Panel::findOrFail($panelID);
 
 	    $respondent = new Respondent;
