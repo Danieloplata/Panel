@@ -6,12 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Respondent extends Model
 {
-	protected $fillable = [
-		'panel_id',
+	protected $primaryKey = 'id';
+    protected $fillable = [
+        'panel_id',
+        'respondentID',
         'status',
         'ipAddress',
-        'created_at'
-	];	
+        'userAgent',
+        'countryCode'
+    ];
+
     public function panel()
     {
         return $this->belongsToMany(Panel::class);

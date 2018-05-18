@@ -17,30 +17,53 @@ class RedirectController extends Controller
 
     public function start($panelID, $respondentID) {
 
-    	// Perform checks on respondent
-    		// ip + useragent check
-    		// country check
-    		// respondent id + panel id check
-    		// cookie check
+    	$panelID = sanitise($panelID);
+		$respondentID = sanitise($respondentID);
+		
+        $curl = curl_init();
 
-    	$panel = Panel::findOrFail($panelID);
+        curl_setopt_array($curl, array(
+			CURLOPT_URL => "http://ip-api.com/json/".$_SERVER['REMOTE_ADDR'],
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_TIMEOUT => 30000,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "GET",
+			CURLOPT_HTTPHEADER => array(
+				'Content-Type: application/json',
+			),
+		));
+		
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+		curl_close($curl);
+		$geoloc = json_decode($response);
 
-	    $respondent = new Respondent;
-	    $respondent->panel_id = $panelID;
-	    $respondent->respondentID = $respondentID;
-	    $respondent->status = "incomplete";
-	    $respondent->ipAddress = $_SERVER['REMOTE_ADDR'];
-	    $respondent->userAgent = $_SERVER['HTTP_USER_AGENT'];
-	    $respondent->save();
-
-	    $cookie = Cookie::forever('PanelRespondent', $respondentID);
-    
-	    return redirect($panel->projectLink . $respondentID);    
-
+        Respondent::create([
+			'panel_id' => $panelID,
+			'respondentID' => $respondentID,
+			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
+			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
+			'countryCode' => "GB", //sanitise($geoloc->countryCode),
+			'status' => "incomplete",
+    	]);
+		
+        $panel = Panel::findOrFail($panelID);
+      
+        return redirect($panel->projectLink . $respondentID);
 	}
 
     public function passback($panelID, $status, $respondentID)
     {
-        dd($cookie);
+        $panelID = sanitise($panelID);
+		$status = sanitise($status);
+		$respondentID = sanitise($respondentID);
+		
+         Respondent::where('panel_id', $panelID)
+         ->where('respondentID', $respondentID)
+         ->first()
+         ->update(['status' => $status]);
+		 
+		 return redirect("https://google.co.uk");
     }
 }

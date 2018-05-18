@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 class RespondentController extends Controller
 {
-    public function store()
+	 public function __construct()
     {
-    	Respondent::create([
-    		'panel_id' => $panelID,
-    		'providerID' => $respondentID,
-    		'ipAddress' => "192.168.0.1",
-    		'status' => "Incomplete",
-    	]);
+        $this->middleware('auth', ['except' => ['store']]);
     }
+
+    public function show()
+    {
+    	$respondents = Respondent::latest()->get();
+		return view('panel/respondents', compact('respondents'));
+    }
+
 }
