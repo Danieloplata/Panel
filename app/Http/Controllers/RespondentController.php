@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Panel;
+use App\Respondent;
 
 class RespondentController extends Controller
 {
@@ -11,10 +13,15 @@ class RespondentController extends Controller
         $this->middleware('auth', ['except' => ['store']]);
     }
 
-    public function show()
+    public function index($panelID)
     {
-    	$respondents = Respondent::latest()->get();
-		return view('panel/respondents', compact('respondents'));
+    	$panel = Panel::find($panelID);
+
+    	$respondents = Respondent::where('panel_id', $panelID)
+    	->latest()
+    	->paginate(10);
+  	
+		return view('respondents/index', compact('panel','respondents'));
     }
 
 }

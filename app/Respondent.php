@@ -18,7 +18,7 @@ class Respondent extends Model
 
     public function panel()
     {
-        return $this->belongsToMany(Panel::class);
+        return $this->belongsTo(Panel::class);
     }
     public function project()
     {

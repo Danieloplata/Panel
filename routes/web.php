@@ -20,6 +20,9 @@ Route::get('/panel/create/{projectID}', 'PanelController@create')->name('createP
 Route::post('/panel', 'PanelController@store')->name('storePanel');
 Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
+// Panel respondent views
+Route::get('/panel/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
+
 // Panel Redirect
 Route::get('/start/{panelid}/{respondentid}', 'RedirectController@start')->name('redirectStart');
 Route::get('/passback/{panelid}/{status}/{respondentid}', 'RedirectController@passback')->name('redirectPassback');
