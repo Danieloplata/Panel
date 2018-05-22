@@ -22,12 +22,12 @@
         <div class="panel-body">
             <table class="table table-striped table-hover centre-text">
                 <tr>
-                    <th>ACUMEN ID</th>
+                    <th>RESPONDENT ID</th>
                     <th>PANEL ID</th>
                     <th>COUNTRY</th>
                     <th>REGION</th>
                     <th>STATUS</th>
-                    <th>VIEW</th>
+                    <th>TIMESTAMP</th>
                 </tr>
 
                 @foreach ($respondents as $respondent)
@@ -37,7 +37,7 @@
                     <th>{{ $respondent->country }}</th>
                     <th>{{ $respondent->countryRegion }}</th>
                     <th>{{ $respondent->status }}</th>
-                    <th><a href="{{ url('/panel') }}/"><button type="button" class="btn btn-danger">View</button></a></th>
+                    <th>2018-05-21 10:58:29</th>
                 </tr>
                 @endforeach
 
@@ -46,7 +46,7 @@
             <div align="center">
                 {{ $respondents->links() }}
             </div>
-            
+
             <!--<div class="index-pagination" style="border-top: 1px solid #e74c3c;">
                 <ul class="pager">
                     <li class="previous disabled"><a href="#">&larr; Previous</a></li>

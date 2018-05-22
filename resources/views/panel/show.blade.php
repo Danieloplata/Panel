@@ -1,7 +1,7 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    {{ $panel->projectName }}
+    {{ $panel->project->projectName }}
 @endsection
 
 @section('headerDropDown')
@@ -14,7 +14,8 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a href="#"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> Mark as complete</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit panel</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export data to CSV</a></li>
+          <li><a href="{{ url('/') }}/panel/{{ $panel->id }}/respondents"><span class="glyphicon glyphicon-user font-orange" aria-hidden="true"></span> View respondents</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export respondents</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete panel</a></li>
         </ul>
       </div>
