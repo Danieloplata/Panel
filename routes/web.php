@@ -22,7 +22,7 @@ Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
 // Panel respondent views
 Route::get('/panel/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
-
+Route::get('/panel/{panelID}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
 // Panel Redirect
 Route::get('/start/{panelid}/{respondentid}', 'RedirectController@start')->name('redirectStart');
 Route::get('/passback/{panelid}/{status}/{respondentid}', 'RedirectController@passback')->name('redirectPassback');
@@ -36,6 +36,9 @@ Route::get('/projects/{project}', 'ProjectController@show')->name('showProject')
 // Help section routing
 Route::get('/docs', 'DocumentationController@index')->name('DocumentationOverview');
 Route::get('/docs/{topic}', 'DocumentationController@show')->name('showDocumentationTopic');
+
+// Statis pages
+Route::get('/thankyou', 'RedirectController@thankyou')->name('thankYou');
 
 // Authentication routes
 Auth::routes();

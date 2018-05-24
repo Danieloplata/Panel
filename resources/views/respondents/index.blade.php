@@ -5,7 +5,20 @@
 @endsection
 
 @section('headerDropDown')
-    
+    <div class="col-md-2" style="float: right;">
+        <div class="dropdown create" style="float: right;">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Filter respondents
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> All respondents</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Completes</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Quota full</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Screen out</a></li>
+            </ul>
+        </div>
+    </div>
 @endsection
 
 @section('breadcrumb')
@@ -17,7 +30,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading main-color-bg">
-            <h3 class="panel-title">Respondents for {{ $panel->panelName }}</h3>
+            <h3 class="panel-title">{{ $respondents->total() }} respondents found for {{ $panel->panelName }}</h3>
         </div>
         <div class="panel-body">
             <table class="table table-striped table-hover centre-text">

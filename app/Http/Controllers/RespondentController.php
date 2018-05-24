@@ -24,4 +24,16 @@ class RespondentController extends Controller
 		return view('respondents/index', compact('panel','respondents'));
     }
 
+    public function filter($panelID, $status)
+    {
+        $panel = Panel::find($panelID);
+
+        $respondents = Respondent::where('panel_id', $panelID)
+        ->where('status', $status)
+        ->latest()
+        ->paginate(10);
+    
+        return view('respondents/index', compact('panel','respondents'));
+    }
+
 }

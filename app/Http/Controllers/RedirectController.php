@@ -12,7 +12,7 @@ class RedirectController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['start', 'passback']]);
+        $this->middleware('auth', ['except' => ['start', 'passback', 'thankyou']]);
     }
 
     public function start($panelID, $respondentID) {
@@ -64,6 +64,12 @@ class RedirectController extends Controller
          ->first()
          ->update(['status' => $status]);
 		 
-		 return redirect("https://google.co.uk");
+		 return redirect()->route('thankYou');
     }
+
+    public function thankyou()
+    {
+    	return view('panel/thankyou');
+    }
+
 }
