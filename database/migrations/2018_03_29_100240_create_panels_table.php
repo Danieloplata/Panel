@@ -17,7 +17,7 @@ class CreatePanelsTable extends Migration
             $table->increments('id');
             $table->integer('project_id');
             $table->integer('user_id');
-            $table->int('panelProvider');
+            $table->integer('panelProvider');
             $table->string('status');
             $table->timestamps();
         });
