@@ -12,7 +12,7 @@ class ProjectsTableSeeder extends Seeder
     public function run()
     {
     	DB::table('projects')->insert([
-	    'projectName' => 'Test Project '.str_random(5),
+			'projectName' => 'Test Project '.str_random(5),
 			'amountQuoted' => '£20,000',
 			'companyEmail' => 'company.email@email.com',
 			'clientEmail' => 'client.email@email.com',
