@@ -18,13 +18,9 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+.idea/
 *.sublime-project
 *.sublime-workspace
 *.floo
 *.flooignore
-.idea/misc.xml
-.idea/modules.xml
-.idea/Panel.iml
-.idea/php.xml
-.idea/vcs.xml
-.idea/workspace.xml
+
