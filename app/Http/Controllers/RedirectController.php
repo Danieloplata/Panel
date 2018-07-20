@@ -59,10 +59,10 @@ class RedirectController extends Controller
 		$status = sanitise($status);
 		$respondentID = sanitise($respondentID);
 		
-         Respondent::where('panel_id', $panelID)
-         ->where('respondentID', $respondentID)
-         ->first()
-         ->update(['status' => $status]);
+        Respondent::where('panel_id', $panelID)
+        ->where('respondentID', $respondentID)
+        ->first()
+        ->update(['status' => $status]);
 		 
 		 return redirect()->route('thankYou');
     }
