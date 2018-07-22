@@ -46,7 +46,7 @@
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Provider</b></td>
-                  <td width="35%" colspan="2">{{ $panel->projectProvider }}</td>
+                  <td width="35%" colspan="2">{{ $panel->provider_id }}</td>
                   <td width="15%" class="active"><b>Created by</b></td>
                   <td width="35%">{{ $panel->user->name }}</td>
                 </tr>

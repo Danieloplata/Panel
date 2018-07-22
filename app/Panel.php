@@ -8,8 +8,8 @@ class Panel extends Model
 {
 	// Set fillable form fields
 	protected $fillable = [
-		'projectName',
-		'projectLink'
+		'panelName',
+		'redirectLink'
 	];
 
     public function project()
@@ -20,6 +20,11 @@ class Panel extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function countries()
+    {
+        return $this->belongsToMany(Country::class);
     }
 
 }

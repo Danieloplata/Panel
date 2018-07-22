@@ -26,16 +26,14 @@ class PanelController extends Controller
 
     public function create($projectID)
     {
-		return view('panel/create');
+		return view('panel/create', compact('projectID'));
     }
 
     public function store()
     {
         $this->validate(request(), [
             'panelName' => 'required|max:150',
-            'projectLink' => 'required|url',
-            'status' => 'required',
-            'owner' => 'required'
+            'redirectLink' => 'required|url',
         ]);
 
 		Panel::create(request()->all());

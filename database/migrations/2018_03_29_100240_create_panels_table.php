@@ -15,9 +15,11 @@ class CreatePanelsTable extends Migration
     {
         Schema::create('panels', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('project_id');
-            $table->integer('user_id');
-            $table->integer('panelProvider');
+            $table->integer('project_id')->default('1');
+            $table->integer('user_id')->default('1');
+            $table->integer('provider_id')->default('1');
+            $table->string('panelName');
+            $table->string('redirectLink');
             $table->string('status');
             $table->timestamps();
         });

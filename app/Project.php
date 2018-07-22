@@ -8,6 +8,7 @@ class Project extends Model
 {
     // Set fillable form fields
 	protected $fillable = [
+        'user_id',
 		'projectName',
         'amountQuoted',
         'companyEmail',

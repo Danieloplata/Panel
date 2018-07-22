@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class ProjectsTableSeeder extends Seeder
 {
@@ -12,6 +13,7 @@ class ProjectsTableSeeder extends Seeder
     public function run()
     {
     	DB::table('projects')->insert([
+    		'user_id' => 1,
 			'projectName' => 'Test Project '.str_random(5),
 			'amountQuoted' => '£20,000',
 			'companyEmail' => 'company.email@email.com',

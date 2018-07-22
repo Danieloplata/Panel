@@ -32,17 +32,18 @@
             <!-- hidden CSRF token field -->
                 @csrf
             <!-- hidden CSRF token field -->
+            <input id="project_id" name="project_id" type="hidden" value="{{ $projectID }}">
             <!--<fieldset>-->
               <div class="form-group">
                 <label for="projectName" class="col-lg-3 control-label">Project name</label>
                 <div class="col-lg-8">
-                  <input type="text" class="form-control" name="projectName" id="projectName" placeholder="Enter name of project" required>
+                  <input type="text" class="form-control" name="panelName" id="panelName" placeholder="Enter a panel name" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="projectLink" class="col-lg-3 control-label">Project link</label>
                 <div class="col-lg-8">
-                  <input type="text" class="form-control" name="projectLink" id="projectLink" placeholder="Enter survey link" required>
+                  <input type="text" class="form-control" name="redirectLink" id="redirectLink" placeholder="Enter survey link" required>
                 </div>
               </div>
               <div id="allowedCountriesInput">
