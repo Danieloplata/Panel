@@ -37,7 +37,11 @@ class PanelController extends Controller
             'status' => 'required',
             'owner' => 'required'
         ]);
-		  Panel::create(request()->all());
-		  return redirect('/');
+
+		Panel::create(request()->all());
+
+        session()->flash('message', 'Panel created');
+
+		return redirect('/');
     }
 }

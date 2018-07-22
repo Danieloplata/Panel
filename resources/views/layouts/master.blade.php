@@ -9,7 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css?v=1') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=6') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=11') }}" rel="stylesheet">
     
   </head>
 
@@ -17,6 +17,7 @@
     @include('layouts/nav')
     @include('layouts/header')
     @include('layouts/breadcrumb')
+    @include('layouts/flash') 
     <section id="main">
         <div class="container">
             <div class="row">

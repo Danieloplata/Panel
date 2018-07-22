@@ -53,9 +53,13 @@ class ProjectController extends Controller
             'verbFormat' => 'required',
             'notes' => 'required'
         ]);
+
         auth()->user()->createProject(
             new Project(request()->all())
         );
+
+        session()->flash('message', 'Project created');
+
         return redirect('/');
     }
 }
