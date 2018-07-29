@@ -52,7 +52,15 @@
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Countries</b></td>
-                  <td width="35%" colspan="5">United Kingdom, United States of America, Sweden, India, France, Germany</td>
+                  <td width="35%" colspan="5">
+                    @foreach ($panel->countries as $country)
+                      @if ($loop->last)
+                        {{ $country->countryName }}
+                      @else
+                        {{ $country->countryName }},
+                      @endif
+                    @endforeach
+                  </td>
                 </tr>
                  <tr>
                   <td class="panel-heading main-color-bg" colspan="5">Panel Usage</td>
