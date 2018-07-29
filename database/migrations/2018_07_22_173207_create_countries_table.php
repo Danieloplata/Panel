@@ -21,8 +21,8 @@ class CreateCountriesTable extends Migration
 
         Schema::create('country_panel', function (Blueprint $table) {
             $table->integer('panel_id');
-            $table->integer('countries_id');
-            $table->primary(['panel_id', 'countries_id']);
+            $table->integer('country_id');
+            $table->primary(['panel_id', 'country_id']);
         });
 
     }
