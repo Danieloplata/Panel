@@ -53,11 +53,11 @@
                 <tr>
                   <td width="15%" class="active"><b>Countries</b></td>
                   <td width="35%" colspan="5">
-                    @foreach ($panel->countries as $country)
+                    @foreach ($panel->countries->pluck("countryName") as $country)
                       @if ($loop->last)
-                        {{ $country->countryName }}
+                        {{ $country }}
                       @else
-                        {{ $country->countryName }},
+                        {{ $country }},
                       @endif
                     @endforeach
                   </td>
