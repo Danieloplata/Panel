@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     		UsersTableSeeder::class,
     		ProjectsTableSeeder::class,
     		PanelsTableSeeder::class,
+            CountriesTableSeeder::class,
     	]);
     }
 }
