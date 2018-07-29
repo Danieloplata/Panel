@@ -17,10 +17,9 @@ class CreateCountriesTable extends Migration
             $table->increments('id');
             $table->string('countryCode')->unique();
             $table->string('countryName')->unique();
-            $table->timestamps();
         });
 
-        Schema::create('panel_countries', function (Blueprint $table) {
+        Schema::create('country_panel', function (Blueprint $table) {
             $table->integer('panel_id');
             $table->integer('countries_id');
             $table->primary(['panel_id', 'countries_id']);
@@ -36,6 +35,6 @@ class CreateCountriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('countries');
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('country_panel');
     }
 }
