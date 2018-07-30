@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     public function createProject(Project $project)
     {
-        $this->projects()->save($project);
+        return $this->projects()->save($project);
     }
 
 }

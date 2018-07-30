@@ -54,12 +54,12 @@ class ProjectController extends Controller
             'notes' => 'required'
         ]);
 
-        auth()->user()->createProject(
+        $project = auth()->user()->createProject(
             new Project(request()->all())
         );
 
         session()->flash('message', 'Project created');
 
-        return redirect('/');
+        return redirect(route('showProject', $project->id));
     }
 }
