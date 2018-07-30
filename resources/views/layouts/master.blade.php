@@ -9,7 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css?v=1') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=11') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css?v=13') }}" rel="stylesheet">
     
   </head>
 
