@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PanelProvider extends Model
+class Provider extends Model
 {
     public function panels()
     {
