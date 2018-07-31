@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePanelProvidersTable extends Migration
+class CreateProvidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreatePanelProvidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('panel_providers', function (Blueprint $table) {
+        Schema::create('providers', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('providerName');
+            $table->string('completeLink');
+            $table->string('quotaFullLink');
+            $table->string('screenoutLink');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreatePanelProvidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('panel_providers');
+        Schema::dropIfExists('providers');
     }
 }
