@@ -27,7 +27,7 @@
 @endsection
 
 @section('content')
-<!-- Latest projects -->
+<!-- Latest panels -->
 <div class="panel panel-default">
     <div class="panel-heading main-color-bg">
         <h3 class="panel-title">Panel overview</h3>
