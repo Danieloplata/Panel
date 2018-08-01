@@ -27,6 +27,7 @@ Route::get('/providers/{provider}', 'ProviderController@show')->name('showProvid
 // Panel respondent views
 Route::get('/panel/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
 Route::get('/panel/{panelID}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
+
 // Panel Redirect
 Route::get('/start/{panelid}/{respondentid}', 'RedirectController@start')->name('redirectStart');
 Route::get('/passback/{panelid}/{status}/{respondentid}', 'RedirectController@passback')->name('redirectPassback');

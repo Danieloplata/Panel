@@ -24,13 +24,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Provider</th>
+                    <th>Projects</th>
                     <th></th>
                 </tr>
 
                 @foreach ($providers as $provider)
                 <tr>
                     <th class="vertical-align">{{ $provider->id }}</th>
-                    <th>{{ $provider->projectName }}</th>
+                    <th>{{ $provider->providerName }}</th>
+                    <th>28</th>
                     <th><a href="{{ url('/providers') }}/{{ $provider->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
                 @endforeach
