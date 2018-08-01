@@ -37,7 +37,7 @@ Route::get('/projects/{project}', 'ProjectController@show')->name('showProject')
 Route::get('/docs', 'DocumentationController@index')->name('DocumentationOverview');
 Route::get('/docs/{topic}', 'DocumentationController@show')->name('showDocumentationTopic');
 
-// Statis pages
+// Status pages
 Route::get('/thankyou', 'RedirectController@thankyou')->name('thankYou');
 
 // Authentication routes
