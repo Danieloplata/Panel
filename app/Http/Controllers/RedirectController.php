@@ -50,7 +50,7 @@ class RedirectController extends Controller
 		
         $panel = Panel::findOrFail($panelID);
       
-        return redirect($panel->projectLink . $respondentID);
+        return redirect($panel->redirectLink . $respondentID);
 	}
 
     public function passback($panelID, $status, $respondentID)
