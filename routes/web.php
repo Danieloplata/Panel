@@ -20,6 +20,10 @@ Route::get('/panel/create/{projectID}', 'PanelController@create')->name('createP
 Route::post('/panel', 'PanelController@store')->name('storePanel');
 Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
+// Provider views
+Route::get('/providers', 'ProviderController@index')->name('providerOverview');
+Route::get('/providers/{provider}', 'ProviderController@show')->('showProvider');
+
 // Panel respondent views
 Route::get('/panel/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
 Route::get('/panel/{panelID}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
