@@ -22,7 +22,7 @@ Route::get('/panel/{panel}', 'PanelController@show')->name('showPanel');
 
 // Provider views
 Route::get('/providers', 'ProviderController@index')->name('providerOverview');
-Route::get('/providers/{provider}', 'ProviderController@show')->('showProvider');
+Route::get('/providers/{provider}', 'ProviderController@show')->name('showProvider');
 
 // Panel respondent views
 Route::get('/panel/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
