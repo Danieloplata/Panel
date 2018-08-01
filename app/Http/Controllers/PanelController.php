@@ -36,10 +36,10 @@ class PanelController extends Controller
             'redirectLink' => 'required|url',
         ]);
 
-		Panel::create(request()->all());
+		$panel = Panel::create(request()->all());
 
         session()->flash('message', 'Panel created');
 
-		return redirect('/');
+		return redirect(route('showPanel', $panel->id));
     }
 }
