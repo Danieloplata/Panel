@@ -20,7 +20,7 @@ class CreatePanelsTable extends Migration
             $table->integer('provider_id')->default('1');
             $table->string('panelName');
             $table->string('redirectLink');
-            $table->string('status');
+            $table->string('status')->default('LIVE');
             $table->timestamps();
         });
     }
