@@ -45,7 +45,7 @@
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Company Contact</b></td>
-                <td width="35%" colspan="2"><a href="mailto:{{ $project->user->email }}">{{ $project->user->email }}</a></td>
+                <td width="35%" colspan="2"><a href="mailto:{{ $project->user->email }}">{{ $project->companyEmail }}</a></td>
                 <td width="15%" class="active"><b>Client Contact</b></td>
                 <td width="35%"><a href="mailto:{{ $project->clientEmail }}">{{ $project->clientEmail }}</a></td>
               </tr>
@@ -88,7 +88,7 @@
               @foreach ($project->panels as $panel)
               <tr>
                 <td width="15%" class="active"><b>Panel name</b></td>
-                <td width="35%" colspan="2">{{ $panel->panelName }}</td>
+                <td width="35%" colspan="2"><a href="{{ route('showPanel', $panel->id) }}">{{ $panel->panelName }}</td>
                 <td width="15%" class="active"><b>Panel status</b></td>
                 <td width="35%" colspan="2" class="font-green">{{ $panel->status }}</td>
               </tr>
