@@ -33,7 +33,7 @@ class RespondentController extends Controller
         ->latest()
         ->paginate(10);
     
-        return view('respondents/index', compact('panel','respondents'));
+        return view('respondents/index', compact('panel','respondents', 'status'));
     }
 
 }

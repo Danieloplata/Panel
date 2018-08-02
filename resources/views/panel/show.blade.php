@@ -23,7 +23,7 @@
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Displaying panel: {{ $panel->projectName }}
+    Home > Panel > Displaying {{ $panel->panelName }} panel for project: {{ $panel->project->projectName }}
 @endsection
 
 @section('content')
@@ -36,7 +36,7 @@
         <table class="table table-bordered">
             <tbody align="left">
                 <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Project Details</td>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Project Details</b></td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Project Name</b></td>
@@ -63,7 +63,7 @@
                   </td>
                 </tr>
                  <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Panel Usage</td>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Panel Usage</b></td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Status</b></td>
@@ -90,7 +90,7 @@
                   <td width="35%">25%</td>
                 </tr>
                 <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Links for Client</td>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Links for Client</b></td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Test link</b></td>
@@ -113,7 +113,7 @@
                   <td width="35%" colspan="5">{{ url('/') }}/passback/{{ $panel->id }}/screenout/append-id-here</td>
                 </tr>
                 <tr>
-                  <td class="panel-heading main-color-bg" colspan="5">Provider links</td>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Provider links</b></td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Completion</b></td>

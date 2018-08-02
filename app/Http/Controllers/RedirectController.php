@@ -45,7 +45,7 @@ class RedirectController extends Controller
 			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
 			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
 			'countryCode' => "GB", //sanitise($geoloc->countryCode),
-			'status' => "incomplete",
+			'status' => "Incomplete",
     	]);
 		
         $panel = Panel::findOrFail($panelID);
