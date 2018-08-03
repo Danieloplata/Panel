@@ -88,13 +88,6 @@
                 {{ $respondents->links() }}
             </div>
 
-            <!--<div class="index-pagination" style="border-top: 1px solid #e74c3c;">
-                <ul class="pager">
-                    <li class="previous disabled"><a href="#">&larr; Previous</a></li>
-                    <li class="next"><a href="#">Next &rarr;</a></li>
-                </ul>
-            </div>-->
-
         </div>
     </div>
 @endsection
