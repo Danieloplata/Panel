@@ -64,7 +64,7 @@
             <table class="table table-striped table-hover centre-text">
                 <tr>
                     <th>RESPONDENT ID</th>
-                    <th>PANEL ID</th>
+                    <th>PROVIDER ID</th>
                     <th>COUNTRY</th>
                     <th>REGION</th>
                     <th>STATUS</th>

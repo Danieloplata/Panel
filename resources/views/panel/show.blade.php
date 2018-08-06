@@ -27,7 +27,6 @@
 @endsection
 
 @section('content')
-<!-- Latest panels -->
 <div class="panel panel-default">
     <div class="panel-heading main-color-bg">
         <h3 class="panel-title">Panel overview</h3>
@@ -46,7 +45,7 @@
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Provider</b></td>
-                  <td width="35%" colspan="2">{{ $panel->provider_id }}</td>
+                  <td width="35%" colspan="2">{{ $panel->provider->providerName }}</td>
                   <td width="15%" class="active"><b>Created by</b></td>
                   <td width="35%">Test</td>
                 </tr>
@@ -69,25 +68,25 @@
                   <td width="15%" class="active"><b>Status</b></td>
                   <td width="35%" colspan="2" class="font-green">{{ $panel->status }}</td>
                   <td width="15%" class="active"><b>Total</b></td>
-                  <td width="35%"></td>
+                  <td width="35%">{{ $responseStatistics->totalResponses }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Completes</b></td>
-                  <td width="35%" colspan="2">782</td>
+                  <td width="35%" colspan="2">{{ $responseStatistics->completeResponses }}</td>
                   <td width="15%" class="active"><b>Incompletes</b></td>
-                  <td width="35%">218</td>
+                  <td width="35%">{{ $responseStatistics->incompleteResponses }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Quota full</b></td>
-                  <td width="35%" colspan="2">250</td>
+                  <td width="35%" colspan="2">{{ $responseStatistics->quotaFullResponses }}</td>
                   <td width="15%" class="active"><b>Screenout</b></td>
-                  <td width="35%">250</td>
+                  <td width="35%">{{ $responseStatistics->screenoutResponses }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Incidence (%)</b></td>
-                  <td width="35%" colspan="2">78%</td>
+                  <td width="35%" colspan="2">{{ $responseStatistics->incidenceRate }}%</td>
                   <td width="15%" class="active"><b>Screenouts (%)</b></td>
-                  <td width="35%">25%</td>
+                  <td width="35%">{{ $responseStatistics->screenoutRate }}%</td>
                 </tr>
                 <tr>
                   <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Links for Client</b></td>
@@ -117,15 +116,15 @@
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Completion</b></td>
-                  <td width="35%" colspan="5">http://s.cint.com/Survey/Complete?id=</td>
+                  <td width="35%" colspan="5">{{ $panel->provider->completeLink }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Quota full</b></td>
-                  <td width="35%" colspan="5">http://s.cint.com/Survey/QuotaFull?id=</td>
+                  <td width="35%" colspan="5">{{ $panel->provider->quotaFullLink }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Screenout</b></td>
-                  <td width="35%" colspan="5">http://s.cint.com/Survey/EarlyScreenOut?id=</td>
+                  <td width="35%" colspan="5">{{ $panel->provider->screenoutLink }}</td>
                 </tr>
             </tbody>
         </table>
