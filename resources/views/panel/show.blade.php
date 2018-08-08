@@ -89,7 +89,7 @@
                   <td width="35%">{{ $responseStatistics->screenoutRate }}%</td>
                 </tr>
                 <tr>
-                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Links for Client</b></td>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Links for Provider</b></td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Test link</b></td>
@@ -99,6 +99,10 @@
                   <td width="15%" class="active"><b>Start link</b></td>
                   <td width="35%" colspan="5">{{ url('/') }}/start/{{ $panel->id }}/append-id-here</td>
                 </tr>
+                <tr>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Links for Client</b></td>
+                </tr>
+                <tr>
                 <tr>
                   <td width="15%" class="active"><b>Completion</b></td>
                   <td width="35%" colspan="5">{{ url('/') }}/passback/{{ $panel->id }}/complete/append-id-here</td>
@@ -112,7 +116,7 @@
                   <td width="35%" colspan="5">{{ url('/') }}/passback/{{ $panel->id }}/screenout/append-id-here</td>
                 </tr>
                 <tr>
-                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Provider links</b></td>
+                  <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Where each of our passback links will redirect to</b></td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Completion</b></td>
