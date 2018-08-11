@@ -21,7 +21,35 @@ class PanelController extends Controller
 
     public function show(Panel $panel)
     {
-		  return view('panel/show', compact('panel'));
+        $totalResponses = $panel->respondents->count();
+        $completeResponses = $panel->respondents->where('status', 'Complete')->count();
+        $incompleteResponses = $panel->respondents->where('status', 'Incomplete')->count();
+        $quotaFullResponses = $panel->respondents->where('status', 'QuotaFull')->count();
+        $screenoutResponses = $panel->respondents->where('status', 'Screenout')->count();
+
+        if($totalResponses == 0 OR $screenoutResponses == 0) {
+            $screenoutRate = 0;
+        } else {
+            $screenoutRate = number_format(($screenoutResponses / $totalResponses) * 100, 2);
+        }
+
+        if($totalResponses == 0 OR $completeResponses == 0) {
+            $incidenceRate = 0;
+        } else {
+            $incidenceRate = number_format(($completeResponses / $totalResponses) * 100, 2);
+        }
+
+        $responseStatistics = (object) [
+            'totalResponses' => $totalResponses,
+            'completeResponses' => $completeResponses,
+            'incompleteResponses' => $incompleteResponses,
+            'quotaFullResponses' => $quotaFullResponses,
+            'screenoutResponses' => $screenoutResponses,
+            'screenoutRate' => $screenoutRate,
+            'incidenceRate' => $incidenceRate
+        ];
+
+		return view('panel/show', compact('panel', 'responseStatistics'));
     }
 
     public function create($projectID)

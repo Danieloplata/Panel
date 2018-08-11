@@ -27,4 +27,14 @@ class Panel extends Model
         return $this->belongsToMany(Country::class);
     }
 
+    public function provider()
+    {
+        return $this->belongsTo(Provider::class);
+    }
+
+    public function respondents()
+    {
+        return $this->hasMany(Respondent::class);
+    }
+
 }
