@@ -10,21 +10,20 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css?v=1') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css?v=13') }}" rel="stylesheet">
-    
   </head>
 
   <body>
-    @include('layouts/nav')
-    @include('layouts/header')
-    @include('layouts/breadcrumb')
-    @include('layouts/flash') 
+    @include('layouts/partials/nav')
+    @include('layouts/partials/header')
+    @include('layouts/partials/breadcrumb')
+    @include('layouts/partials/flash') 
     <section id="main">
         <div class="container">
             <div class="row">
 
                 <!-- Side bar content -->
                 <div class="col-md-3">
-                    @include('layouts/sidebar')
+                    @include('layouts/partials/sidebar')
                 </div>
                 <!-- End of side bar content -->
 
