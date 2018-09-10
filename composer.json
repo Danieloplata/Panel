@@ -24,7 +24,8 @@
             "database/factories"
         ],
         "files": [
-            "app/Helpers/Sanitisation.php"
+            "app/Helpers/Sanitisation.php",
+		    "vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php"
         ],
         "psr-4": {
             "App\\": "app/"
