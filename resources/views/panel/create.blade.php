@@ -27,7 +27,7 @@
 
           <!-- Start of form body {{ url('/panel') }} -->
           <div class="panel-body">
-            @include('layouts/errors')
+            @include('layouts/partials/errors')
             <form id="createPanelForm" class="form-horizontal" role="form" method="POST" action="{{ route('storePanel') }}";>
             <!-- hidden CSRF token field -->
                 @csrf
