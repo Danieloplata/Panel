@@ -12,7 +12,7 @@
 */
 
 // Homepage view
-Route::get('/', 'HomeController@index')->name('home');;
+Route::get('/', 'HomeController@index')->name('home');
 
 // Panel views
 Route::get('/panel', 'PanelController@index')->name('panelOverview');
