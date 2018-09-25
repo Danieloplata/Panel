@@ -33,10 +33,16 @@ Route::get('/start/{panelid}/{respondentid}', 'RedirectController@start')->name(
 Route::get('/passback/{panelid}/{status}/{respondentid}', 'RedirectController@passback')->name('redirectPassback');
 
 // Project views
-Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
-Route::get('/projects/create', 'ProjectController@create')->name('createProject');
-Route::post('/projects', 'ProjectController@store')->name('storeProject');
-Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
+//Route::get('/projects', 'ProjectController@index')->name('projectsOverview');
+//Route::get('/projects/create', 'ProjectController@create')->name('createProject');
+//Route::post('/projects', 'ProjectController@store')->name('storeProject');
+//Route::get('/projects/{project}', 'ProjectController@show')->name('showProject');
+Route::prefix('projects')->middleware('auth')->group(function () {
+    Route::get('/', 'ProjectController@index')->name('projectsOverview');
+    Route::post('/', 'ProjectController@store')->name('storeProject');
+    Route::get('/create', 'ProjectController@create')->name('createProject');
+    Route::get('/{project}', 'ProjectController@show')->name('showProject');
+});
 
 // Help section routing
 Route::get('/docs', 'DocumentationController@index')->name('DocumentationOverview');
