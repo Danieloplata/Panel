@@ -12,7 +12,8 @@ class RedirectController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['start', 'passback', 'thankyou']]);
+    	$this->middleware('CountryCheck');
+        //$this->middleware('auth', ['except' => ['start', 'passback', 'thankyou']]);
     }
 
     public function start($panelID, $respondentID) {
@@ -44,7 +45,7 @@ class RedirectController extends Controller
 			'respondentID' => $respondentID,
 			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
 			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
-			'countryCode' => "GB", //sanitise($geoloc->countryCode),
+			'countryCode' => sanitise($geoloc->countryCode),
 			'status' => "Incomplete",
     	]);
 		
