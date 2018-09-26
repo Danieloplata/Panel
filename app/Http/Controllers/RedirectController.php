@@ -21,6 +21,7 @@ class RedirectController extends Controller
     	$panelID = sanitise($panelID);
 		$respondentID = sanitise($respondentID);
 		
+		// Replace this with CloudFlare, use CF headers for it
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
