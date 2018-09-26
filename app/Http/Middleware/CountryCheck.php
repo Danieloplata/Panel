@@ -17,7 +17,7 @@ class CountryCheck
     {
         // Check respondent country vs list of allowed countries set on the Panel
         $allowedCountries = array('GB', 'RO');
-
+        
         if(in_array($countryCode, $allowedCountries)) {
             return $next($request);
         } else {
