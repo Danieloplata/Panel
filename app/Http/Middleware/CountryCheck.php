@@ -16,12 +16,12 @@ class CountryCheck
     public function handle($request, Closure $next)
     {
         // Check respondent country vs list of allowed countries set on the Panel
-        $allowedCountries = array('GB', 'RO');
-        
-        if(in_array($countryCode, $allowedCountries)) {
-            return $next($request);
-        } else {
+        $allowedCountries = ['GB', 'RO'];
+        $countryCode = "GB";
+        if (!in_array($countryCode, $allowedCountries)) {
             return redirect('error.php?failedCountryCheck');
         }
+
+        return $next($request);
     }
 }
