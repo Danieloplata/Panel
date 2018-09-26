@@ -12,7 +12,7 @@ class RedirectController extends Controller
 {
     public function __construct()
     {
-    	//$this->middleware('CountryCheck');
+    	$this->middleware('countryCheck');
         //$this->middleware('auth', ['except' => ['start', 'passback', 'thankyou']]);
     }
 
