@@ -12,6 +12,7 @@
 			-o-background-size: cover;
 			background-size: cover;
 			position: relative;
+			height: 100%;
 		}
 		@media only screen and (max-width: 1099px) {
 			.container {
