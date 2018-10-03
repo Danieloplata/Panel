@@ -39,7 +39,7 @@ class CountryCheck
         session(['countryCode' => $countryCode]);
 
         // Check respondent country vs list of allowed countries set on the Panel
-        $allowedCountries = ['GB', 'RO'];
+        $allowedCountries = ['GB', 'RO', 'ES'];
         if (!in_array($countryCode, $allowedCountries)) {
             return redirect('error.php?failedCountryCheck');
         }
