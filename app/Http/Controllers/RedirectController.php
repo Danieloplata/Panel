@@ -41,6 +41,7 @@ class RedirectController extends Controller
 		curl_close($curl);
 		$geoloc = json_decode($response);
 		$countryCode = sanitise($geoloc->countryCode);
+		session(['countryCode' => $countryCode]);
 
         Respondent::create([
 			'panel_id' => $panelID,
