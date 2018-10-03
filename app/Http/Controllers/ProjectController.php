@@ -17,22 +17,22 @@ class ProjectController extends Controller
     public function index()
     {
     	$projects = Project::latest()->get();
-		return view('projects/index', compact('projects'));
+		return view('projects.index', compact('projects'));
     }
 
     public function show(Project $project)
     {
-		return view('projects/show', compact('project'));
+		return view('projects.show', compact('project'));
     }
 
     public function create()
     {
-		return view('projects/create');
+		return view('projects.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-		$this->validate(request(), [
+		$data = $request->validate([
             'projectName' => 'required',
             'amountQuoted' => 'required',
             'companyEmail' => 'required|email',
@@ -54,12 +54,10 @@ class ProjectController extends Controller
             'notes' => 'required'
         ]);
 
-        $project = auth()->user()->createProject(
-            new Project(request()->all())
-        );
+        $project = auth()->user()->projects()->create($data);
 
-        session()->flash('message', 'Project created');
-
-        return redirect(route('showProject', $project->id));
+        return redirect()
+            ->route('showProject', $project->id)
+            ->with('message', 'Project created');
     }
 }

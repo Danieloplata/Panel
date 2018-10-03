@@ -72,7 +72,7 @@ class RedirectController extends Controller
 
     public function thankyou()
     {
-    	return view('panel/thankyou');
+    	return view('panel.thankyou');
     }
 
 }

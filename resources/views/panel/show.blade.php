@@ -41,7 +41,7 @@
                   <td width="15%" class="active"><b>Project Name</b></td>
                   <td width="35%" colspan="2">{{ $panel->project->projectName }}</td>
                   <td width="15%" class="active"><b>Project No</b></td>
-                  <td width="35%">{{ $panel->id }}</td>
+                  <td width="35%">{{ $panel->project->id }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Provider</b></td>

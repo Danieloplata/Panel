@@ -16,7 +16,7 @@ class PanelController extends Controller
     public function index()
     {
     	$panels = Panel::latest()->get();
-	  	return view('panel/index', compact('panels'));
+	  	return view('panel.index', compact('panels'));
     }
 
     public function show(Panel $panel)
@@ -49,25 +49,26 @@ class PanelController extends Controller
             'incidenceRate' => $incidenceRate
         ];
 
-		return view('panel/show', compact('panel', 'responseStatistics'));
+		return view('panel.show', compact('panel', 'responseStatistics'));
     }
 
     public function create($projectID)
     {
-		return view('panel/create', compact('projectID'));
+		return view('panel.create', compact('projectID'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $this->validate(request(), [
+        $data = $request->validate([
+            'project_id' => 'required',
             'panelName' => 'required|max:150',
-            'redirectLink' => 'required|url',
+            'redirectLink' => 'required|url'
         ]);
 
-		$panel = Panel::create(request()->all());
+		$panel = Panel::create($data);
 
-        session()->flash('message', 'Panel created');
-
-		return redirect(route('showPanel', $panel->id));
+		return redirect()
+            ->route('showPanel', $panel->id)
+            ->with('message', 'Panel created');
     }
 }
