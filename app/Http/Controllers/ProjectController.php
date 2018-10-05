@@ -60,4 +60,14 @@ class ProjectController extends Controller
             ->route('showProject', $project->id)
             ->with('message', 'Project created');
     }
+
+    public function delete(Project $project) 
+    {
+        $project->delete();
+
+        return redirect()
+            ->route('projectsOverview')
+            ->with('message', 'Project deleted');
+    }
+
 }

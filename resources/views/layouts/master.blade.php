@@ -15,6 +15,7 @@
   <body>
     @include('layouts/partials/nav')
     @include('layouts/partials/header')
+    @include('layouts/partials/confirmation')
     @include('layouts/partials/breadcrumb')
     @include('layouts/partials/flash') 
     <section id="main">

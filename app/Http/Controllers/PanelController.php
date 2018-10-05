@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Panel;
+use App\Respondent;
 
 class PanelController extends Controller
 {
@@ -70,5 +71,17 @@ class PanelController extends Controller
 		return redirect()
             ->route('showPanel', $panel->id)
             ->with('message', 'Panel created');
+    }
+
+    public function delete(Panel $panel) 
+    {
+        $projectID = $panel->project->id;
+
+        $panel->delete();
+        $panel->respondents()->delete(); 
+
+        return redirect()
+            ->route('showProject', $projectID)
+            ->with('message', 'Panel deleted');
     }
 }

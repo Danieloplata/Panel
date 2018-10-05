@@ -16,7 +16,7 @@
           <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit panel</a></li>
           <li><a href="{{ url('/') }}/panel/{{ $panel->id }}/respondents"><span class="glyphicon glyphicon-user font-orange" aria-hidden="true"></span> View respondents</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export respondents</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete panel</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#confirmationMessage"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete panel</a></li>
         </ul>
       </div>
   </div>
