@@ -21,12 +21,12 @@ class ProviderController extends Controller
 
     public function show(Provider $provider)
     {
-		return view('providers/show', compact('provider'));
+		return view('providers.show', compact('provider'));
     }
 
     public function create()
     {
-		return view('providers/create');
+		return view('providers.create');
     }
 
     public function store()
