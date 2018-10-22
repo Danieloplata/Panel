@@ -13,9 +13,8 @@ class DatabaseSeeder extends Seeder
     {
     	$this->call([
     		UsersTableSeeder::class,
-    		ProjectsTableSeeder::class,
-    		PanelsTableSeeder::class,
             CountriesTableSeeder::class,
+    		ProjectsWithPanelsSeeder::class
     	]);
     }
 }
