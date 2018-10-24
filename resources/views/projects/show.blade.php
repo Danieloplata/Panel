@@ -38,10 +38,8 @@
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project Details</b></td>
               </tr>
               <tr>
-                <td width="15%" class="active"><b>Project No</b></td>
-                <td width="35%" colspan="2">{{ $project->id }}</td>
-                <td width="15%" class="active"><b>Project Name</b></td>
-                <td width="35%">{{ $project->projectName }}</td>
+               <td width="20%" class="active"><b>Project Name</b></td>
+                <td colspan="4">{{ $project->projectName }}</a></td>
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Company Contact</b></td>

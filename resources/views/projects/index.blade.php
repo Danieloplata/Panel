@@ -26,7 +26,6 @@
                     <th>PROJECT</th>
                     <th>METHODOLOGY</th>
                     <th>FIELD END</th>
-                    <th>OWNER</th>
                     <th>STATUS</th>
                     <th></th>
                 </tr>
@@ -37,7 +36,6 @@
                     <th>{{ $project->projectName }}</th>
                     <th>{{ $project->methodology }}</th>
                     <th>{{ $project->fieldEnd }}</th>
-                    <th><a href="#">{{ $project->user->name }}</a></th>
                     <th class="font-green">LIVE</th>
                     <th><a href="{{ url('/projects') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
