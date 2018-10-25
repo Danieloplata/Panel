@@ -5,7 +5,9 @@ use Carbon\Carbon;
 
 $factory->define(App\Project::class, function (Faker $faker) {
     return [
-        'user_id' => 1,
+        'user_id' => function () {
+    		return factory('App\User')->create()->id;
+    	},
 		'projectName' => $faker->realText(50),
 		'amountQuoted' => '£' . $faker->numberBetween($min = 1000, $max = 50000),
 		'companyEmail' => $faker->safeEmail,
