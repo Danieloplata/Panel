@@ -14,10 +14,15 @@ Panels:
 
 Projects:
  ☐ Add functionality to edit projects
- ☐ Add functionality to delete projects
+ ✔ Add functionality to delete projects @done (18-10-26 15:21)
  ☐ Add functionality to delete panels and respondents along with projects
  ☐ Add functionality to enable projects to be marked as complete
  ☐ Export project information to excel (DBF) @low
+
+Respondents:
+ ☐ Define the relationship between respondent and country
+ ☐ Decide on how statuses should be handled and updated
+
 
 Admin:
  ☐ Add user roles
