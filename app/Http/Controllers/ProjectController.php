@@ -87,8 +87,8 @@ class ProjectController extends Controller
             'verbFormat' => 'required',
             'notes' => 'required'
         ]);
-
-        $project->save($data);
+        dd($request);
+        auth()->user()->projects()->update($data);
 
         return redirect()
             ->route('showProject', $project->id)
