@@ -28,6 +28,9 @@ Route::prefix('projects')->middleware('auth')->group(function () {
     Route::post('/', 'ProjectController@store')->name('storeProject');
     Route::get('/create', 'ProjectController@create')->name('createProject');
     Route::get('/{project}', 'ProjectController@show')->name('showProject');
+    Route::get('/{project}/edit', 'ProjectController@edit')->name('editProject');
+    Route::patch('/{project}', 'ProjectController@update')->name('updateProject');
+    Route::delete('/{project}', 'ProjectController@destroy')->name('destroyProject');
 });
 
 // Help section routing

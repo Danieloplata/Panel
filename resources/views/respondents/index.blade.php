@@ -74,7 +74,7 @@
                 @foreach ($respondents as $respondent)
                 <tr>
                     <th class="vertical-align">{{ $respondent->id }}</th>
-                    <th>{{ $respondent->respondentID }}</th>
+                    <th>{{ $respondent->providerID }}</th>
                     <th>{{ $respondent->countryCode }}</th>
                     <th>Greater Manchester</th>
                     <th>{{ $respondent->status }}</th>

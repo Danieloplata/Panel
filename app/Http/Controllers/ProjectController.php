@@ -61,7 +61,41 @@ class ProjectController extends Controller
             ->with('message', 'Project created');
     }
 
-    public function delete(Project $project) 
+    public function edit(Project $project)
+    {
+        return view('projects.edit', compact('project'));
+    }
+
+    public function update(Request $request, Project $project)
+    {
+        $data = $request->validate([
+            'projectName' => 'required',
+            'amountQuoted' => 'required',
+            'companyEmail' => 'required|email',
+            'clientEmail' => 'required|email',
+            'methodology' => 'required',
+            'totalInterviews' => 'required|numeric',
+            'questionnaireBy' => 'required|date',
+            'scriptedBy' => 'required|date',
+            'fieldStart' => 'required|date',
+            'fieldEnd' => 'required|date',
+            'dataSpecBy' => 'required|date',
+            'finalDataBy' => 'required|date',
+            'openQuestions' => 'required|numeric',
+            'rawDataFormat' => 'required',
+            'tabFormat' => 'required',
+            'verbFormat' => 'required',
+            'notes' => 'required'
+        ]);
+
+        $project->save($data);
+
+        return redirect()
+            ->route('showProject', $project->id)
+            ->with('message', 'Project updated');
+    }
+
+    public function destroy(Project $project) 
     {
         $project->delete();
 

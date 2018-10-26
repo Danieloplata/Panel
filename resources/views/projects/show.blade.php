@@ -105,10 +105,10 @@
                 <td width="30%">{{ $project->codeframeRequired }}</td>
               </tr>
               <tr>
-                <td width="20%" class="active"><b>Raw data file</b></td>
+                <td width="20%" colspan="1" class="active"><b>Raw data file</b></td>
                 <td width="30%" colspan="2">{{ $project->rawDataFormat }}</td>
-                <td width="20%" class="active"><b>Cross Tabs</b></td>
-                <td width="30%">{{ $project->crossTabsRequired }}</td>
+                <td width="20%" colspan="1" class="active"><b>Cross Tabs</b></td>
+                <td width="30%" colspan="2">{{ $project->crossTabsRequired }}</td>
               </tr>
               <tr>
                 <td width="20%" class="active"><b>Tab Format</b></td>
