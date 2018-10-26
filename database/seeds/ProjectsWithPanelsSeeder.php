@@ -14,7 +14,13 @@ class ProjectsWithPanelsSeeder extends Seeder
     	$projects = factory('App\Project', 20)->create();
 
 		$projects->each(function($project) {
-			factory('App\Panel', 3)->create(['project_id' => $project->id, 'user_id' => $project->user_id]);
+			$panels = factory('App\Panel', 3)->create(['project_id' => $project->id, 'user_id' => $project->user_id]);
+			$provider = factory('App\Provider')->create();
+
+			$panels->each(function($panel) {
+				$respondents = factory('App\Respondent', 200)->create(['panel_id' => $panel->id]);
+			});
+
 		});
     }
 }

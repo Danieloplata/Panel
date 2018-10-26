@@ -20,7 +20,8 @@ class RedirectController extends Controller
 
     	$panelID = sanitise($panelID);
 		$respondentID = sanitise($respondentID);
-		$countryCode = session('countryCode');
+		//$countryCode = session('countryCode');
+        $countryCode = 231;
 		
         Respondent::create([
 			'panel_id' => $panelID,

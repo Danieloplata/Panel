@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Respondent extends Model
 {
 	protected $primaryKey = 'id';
+
     protected $fillable = [
         'panel_id',
-        'respondentID',
-        'status',
+        'providerID',
         'ipAddress',
         'userAgent',
-        'countryCode'
+        'countryCode',
+        'status',
     ];
 
     public function panel()

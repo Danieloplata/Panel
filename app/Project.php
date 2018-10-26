@@ -30,6 +30,11 @@ class Project extends Model
         'notes'
 	];
 
+    public function path()
+    {
+        return '/projects/' .  $this->id;
+    }
+
     public function panels()
     {
         return $this->hasMany(Panel::class);
