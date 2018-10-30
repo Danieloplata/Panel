@@ -13,7 +13,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><a href="#"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> Mark as complete</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit panel</a></li>
+          <li><a href="{{ route('editPanel', $panel->id) }}"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit panel</a></li>
           <li><a href="{{ url('/') }}/panel/{{ $panel->id }}/respondents"><span class="glyphicon glyphicon-user font-orange" aria-hidden="true"></span> View respondents</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export respondents</a></li>
           <li><a href="#" data-toggle="modal" data-target="#confirmationMessage"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete panel</a></li>
@@ -40,8 +40,8 @@
                 <tr>
                   <td width="15%" class="active"><b>Project Name</b></td>
                   <td width="35%" colspan="2">{{ $panel->project->projectName }}</td>
-                  <td width="15%" class="active"><b>Project No</b></td>
-                  <td width="35%">{{ $panel->project->id }}</td>
+                  <td width="15%" class="active"><b>Panel name</b></td>
+                  <td width="35%">{{ $panel->panelName }}</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Provider</b></td>

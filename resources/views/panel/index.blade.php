@@ -24,9 +24,7 @@
                 <tr>
                     <th>ID</th>
                     <th>PROJECT</th>
-                    <th>PROVIDER</th>
-                    <th>LINK</th>
-                    <th>OWNER</th>
+                    <th>PANEL</th>
                     <th>STATUS</th>
                     <th>VIEW</th>
                 </tr>
@@ -35,9 +33,7 @@
                 <tr>
                     <th class="vertical-align">{{ $panel->id }}</th>
                     <th>{{ $panel->project->projectName }}</th>
-                    <th>{{ $panel->projectProvider }}</th>
-                    <th>{{ $panel->projectLink }}</th>
-                    <th>{{ $panel->project->owner }}</th>
+                    <th>{{ $panel->panelName }}</th>
                     <th class="font-green">{{ $panel->status }}</th>
                     <th><a href="{{ url('/panel') }}/{{ $panel->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>

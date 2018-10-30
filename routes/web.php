@@ -6,10 +6,12 @@ Route::get('/', 'HomeController@index')->name('home');
 // Panel views
 Route::prefix('panel')->middleware('auth')->group(function () {
 	Route::get('/', 'PanelController@index')->name('panelOverview');
-	Route::post('/', 'PanelController@store')->name('storePanel');
-	Route::get('/create/{projectID}', 'PanelController@create')->name('createPanel');
 	Route::get('/{panel}', 'PanelController@show')->name('showPanel');
-	Route::get('/{panel}/delete', 'PanelController@delete')->name('deletePanel');
+	Route::get('/create/{projectID}', 'PanelController@create')->name('createPanel');
+	Route::post('/', 'PanelController@store')->name('storePanel');
+	Route::get('/{panel}/edit', 'PanelController@edit')->name('editPanel');
+	Route::patch('/{panel}', 'PanelController@update')->name('updatePanel');
+	Route::delete('/{panel}/delete', 'PanelController@destroy')->name('deletePanel');
 	Route::get('/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
 	Route::get('/{panelID}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
 });

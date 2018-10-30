@@ -82,13 +82,15 @@ class ProjectController extends Controller
             'dataSpecBy' => 'required|date',
             'finalDataBy' => 'required|date',
             'openQuestions' => 'required|numeric',
+            'codeframeRequired' => 'present',
             'rawDataFormat' => 'required',
+            'crossTabsRequired' => 'present',
             'tabFormat' => 'required',
             'verbFormat' => 'required',
             'notes' => 'required'
         ]);
-        dd($request);
-        auth()->user()->projects()->update($data);
+
+        $project->update($data);
 
         return redirect()
             ->route('showProject', $project->id)

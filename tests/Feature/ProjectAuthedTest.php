@@ -51,7 +51,7 @@ class ProjectAuthedTest extends TestCase
     public function an_authenticated_user_can_view_the_edit_project_form()
     {
         $response = $this->get(route('editProject', $this->project->id))
-            ->assertSee('Create a new project');
+            ->assertSee($this->project->projectName);
     }
 
     /** @test */

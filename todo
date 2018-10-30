@@ -5,7 +5,7 @@ Panel redirect:
  ☐ Log all failed entries (where user was kicked out) @low
 
 Panels:
- ☐ Add functionality to edit panels
+ ✔ Add functionality to edit panels @done (18-10-30 11:35)
  ✔ Add functionality to delete panels @done (18-10-05 12:57)
  ✔ Also delete respondents for a panel, when a panel is deleted @done (18-10-05 14:43)
  ☐ Add functionality to mark panels as complete
@@ -13,7 +13,7 @@ Panels:
  ☐ Export respondents to excel @low
 
 Projects:
- ☐ Add functionality to edit projects
+ ✔ Add functionality to edit projects @done (18-10-30 10:44)
  ✔ Add functionality to delete projects @done (18-10-26 15:21)
  ☐ Add functionality to delete panels and respondents along with projects
  ☐ Add functionality to enable projects to be marked as complete
@@ -26,7 +26,7 @@ Respondents:
 
 Admin:
  ☐ Add user roles
- ☐ First registered user defaults to admin
+ ✔ Add seeder to create admin account @done (18-10-30 11:36)
  ☐ Create an admin interface
  ☐ Add functionality to create/edit/delete users
  ☐ Archive completed jobs

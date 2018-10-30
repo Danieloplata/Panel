@@ -1,7 +1,7 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    Create a new panel
+    Edit panel: {{ $panel->panelName }}
 @endsection
 
 @section('headerDropDown')
@@ -9,13 +9,13 @@
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Create a new panel
+    Home > Panel > Edit panel: {{ $panel->panelName }}
 @endsection
 
 @section('content')
 <div class="panel panel-default">
   <div class="panel-heading main-color-bg">
-      <h3 class="panel-title">Create a new panel</h3>
+      <h3 class="panel-title">Edit panel: {{ $panel->panelName }}</h3>
   </div>
 
   <div class="row">
@@ -28,22 +28,22 @@
           <!-- Start of form body {{ url('/panel') }} -->
           <div class="panel-body">
             @include('layouts/partials/errors')
-            <form id="createPanelForm" class="form-horizontal" role="form" method="POST" action="{{ route('storePanel') }}";>
+            <form id="createPanelForm" class="form-horizontal" role="form" method="POST" action="{{ route('updatePanel', $panel->id) }}";>
             <!-- hidden CSRF token field -->
                 @csrf
+                @method('PATCH')
             <!-- hidden CSRF token field -->
-            <input id="project_id" name="project_id" type="hidden" value="{{ $projectID }}">
             <!--<fieldset>-->
               <div class="form-group">
                 <label for="projectName" class="col-lg-3 control-label">Panel name</label>
                 <div class="col-lg-8">
-                  <input type="text" class="form-control" name="panelName" id="panelName" placeholder="Enter a panel name" required>
+                  <input type="text" class="form-control" name="panelName" id="panelName" placeholder="Enter a panel name" value="{{ $panel->panelName }}" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="projectLink" class="col-lg-3 control-label">Survey link</label>
                 <div class="col-lg-8">
-                  <input type="text" class="form-control" name="redirectLink" id="redirectLink" placeholder="Enter survey link" required>
+                  <input type="text" class="form-control" name="redirectLink" id="redirectLink" placeholder="Enter survey link" value="{{ $panel->redirectLink }}" required>
                 </div>
               </div>
               <div id="allowedCountriesInput">

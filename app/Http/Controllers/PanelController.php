@@ -73,7 +73,26 @@ class PanelController extends Controller
             ->with('message', 'Panel created');
     }
 
-    public function delete(Panel $panel) 
+    public function edit(Panel $panel)
+    {
+        return view('panel.edit', compact('panel'));
+    }
+
+    public function update(Request $request, Panel $panel) 
+    {
+        $data = $request->validate([
+            'panelName' => 'required|max:150',
+            'redirectLink' => 'required|url'
+        ]);
+
+        $panel->update($data);
+
+        return redirect()
+            ->route('showPanel', $panel->id)
+            ->with('message', 'Panel updated');
+    }
+
+    public function destroy(Panel $panel) 
     {
         $projectID = $panel->project->id;
 
