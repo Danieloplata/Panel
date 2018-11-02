@@ -15,7 +15,7 @@
           <li><a href="#"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> Mark as complete</a></li>
           <li><a href="{{ route('editProject', $project->id) }}"><span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span> Edit project</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span> Export data to CSV</a></li>
-          <li><a href="{{ route('destroyProject', $project->id) }}"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete project</a></li>
+          <li><a href="{{ route('deleteProject', $project->id) }}"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Delete project</a></li>
         </ul>
       </div>
   </div>

@@ -38,4 +38,9 @@ class Panel extends Model
         return $this->hasMany(Respondent::class);
     }
 
+    public function path()
+    {
+        return '/panel/' .  $this->id;
+    }
+
 }

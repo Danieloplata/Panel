@@ -11,7 +11,7 @@ Route::prefix('panel')->middleware('auth')->group(function () {
 	Route::post('/', 'PanelController@store')->name('storePanel');
 	Route::get('/{panel}/edit', 'PanelController@edit')->name('editPanel');
 	Route::patch('/{panel}', 'PanelController@update')->name('updatePanel');
-	Route::delete('/{panel}/delete', 'PanelController@destroy')->name('deletePanel');
+	Route::delete('/{panel}', 'PanelController@destroy')->name('deletePanel');
 	Route::get('/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
 	Route::get('/{panelID}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
 });
@@ -32,7 +32,7 @@ Route::prefix('projects')->middleware('auth')->group(function () {
     Route::get('/{project}', 'ProjectController@show')->name('showProject');
     Route::get('/{project}/edit', 'ProjectController@edit')->name('editProject');
     Route::patch('/{project}', 'ProjectController@update')->name('updateProject');
-    Route::delete('/{project}', 'ProjectController@destroy')->name('destroyProject');
+    Route::delete('/{project}', 'ProjectController@destroy')->name('deleteProject');
 });
 
 // Help section routing

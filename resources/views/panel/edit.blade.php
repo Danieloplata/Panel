@@ -104,7 +104,7 @@
               </div>
               <div class="form-group">
                 <div class="col-lg-6 col-lg-offset-4">
-                <br />
+                  <br />
                   <button type="reset" class="btn btn-default">Reset</button>
                   <button type="submit" class="btn btn-default">Submit</button>
                 </div>
