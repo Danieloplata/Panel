@@ -45,4 +45,26 @@ class ProjectGuestTest extends TestCase
         $response = $this->get(route('createProject'))
             ->assertRedirect(route('login'));
     }
+
+    /** @test */
+    public function a_guest_may_not_view_the_edit_project_form()
+    {
+        $response = $this->get(route('editProject', $this->project->id))
+            ->assertRedirect(route('login'));
+    }
+
+    /** @test */
+    public function a_guest_may_not_edit_a_project()
+    {
+        $response = $this->get(route('updateProject', $this->project->id))
+            ->assertRedirect(route('login'));
+    }
+
+    /** @test */
+    public function a_guest_may_not_delete_a_panel()
+    {
+        $response = $this->get(route('deleteProject', $this->project->id))
+            ->assertRedirect(route('login'));
+    }
+
 }

@@ -57,7 +57,8 @@ class ProjectAuthedTest extends TestCase
     /** @test */
     public function an_authenticated_user_can_edit_a_project()
     {
-
+        $response = $this->call('POST', route('updateProject', $this->project->id), $this->project->toArray())
+            ->assertSee('Project updated');
     }
 
     /** @test */
