@@ -36,11 +36,11 @@ Route::prefix('projects')->middleware('auth')->group(function () {
 });
 
 // Help section routing
-Route::get('/docs', 'DocumentationController@index')->name('DocumentationOverview');
+Route::get('/docs', 'DocumentationController@index')->name('documentationOverview');
 Route::get('/docs/{topic}', 'DocumentationController@show')->name('showDocumentationTopic');
 
 // Discussion routing
-Route::get('/discussion', 'DiscussionController@index')->name('DiscussionOverview');
+Route::get('/discussion', 'DiscussionController@index')->name('discussionOverview');
 Route::get('/discussion/{project}', 'DiscussionController@show')->name('showProjectDiscussion');
 
 // Status pages

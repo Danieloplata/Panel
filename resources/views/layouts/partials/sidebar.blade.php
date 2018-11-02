@@ -2,12 +2,11 @@
     <a href="#" class="list-group-item active main-color-bg title">
         Navigation
     </a>
-    <a href="{{ route('createProject') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Create project</a>
+    <a href="{{ route('createProject') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Create a new project</a>
     <a href="{{ route('projectsOverview') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> View projects <span class="badge">{{ App\Project::count() }}</span></a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Create panel</a>
     <a href="{{ route('panelOverview') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> View panels <span class="badge">{{ App\Panel::count() }}</span></a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Discussion <span class="badge">6 unread</span></a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Help</a>
+    <a href="{{ route('discussionOverview') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Discussion <span class="badge">6 unread</span></a>
+    <a href="{{ route('documentationOverview') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Documentation</a>
     <a href="#" class="list-group-item"><strong>Admin section</strong></a>
     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Admin link</a>
     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Admin link</a>
