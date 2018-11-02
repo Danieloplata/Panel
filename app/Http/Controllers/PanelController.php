@@ -16,7 +16,9 @@ class PanelController extends Controller
     
     public function index()
     {
-    	$panels = Panel::latest()->get();
+    	$panels = Panel::latest()
+            ->paginate(10);
+
 	  	return view('panel.index', compact('panels'));
     }
 

@@ -39,7 +39,12 @@ Route::prefix('projects')->middleware('auth')->group(function () {
 Route::get('/docs', 'DocumentationController@index')->name('DocumentationOverview');
 Route::get('/docs/{topic}', 'DocumentationController@show')->name('showDocumentationTopic');
 
+// Discussion routing
+Route::get('/discussion', 'DiscussionController@index')->name('DiscussionOverview');
+Route::get('/discussion/{project}', 'DiscussionController@show')->name('showProjectDiscussion');
+
 // Status pages
+// create a pages controller for random static pages
 Route::get('/thankyou', 'RedirectController@thankyou')->name('thankYou');
 
 // Authentication routes

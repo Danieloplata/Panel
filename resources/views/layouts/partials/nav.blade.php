@@ -15,9 +15,9 @@
         <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
         <li class="{{ Request::is('projects*') ? 'active' : '' }}"><a href="{{ route('projectsOverview') }}">Projects</a></li>
         <li class="{{ Request::is('panel*') ? 'active' : '' }}"><a href="{{ route('panelOverview') }}">Panel</a></li>
-        <li><a href="#">Feature 2</a></li>
-        <li><a href="#">Discussion</a></li>
-        <li class="{{ Request::is('Documentation*') ? 'active' : '' }}"><a href="{{ route('DocumentationOverview') }}">Help</a></li>
+        <li class="{{ Request::is('feature*') ? 'active' : '' }}"><a href="#">Feature 2</a></li>
+        <li class="{{ Request::is('discussion*') ? 'active' : '' }}"><a href="{{ route('DiscussionOverview') }}">Discussion</a></li>
+        <li class="{{ Request::is('docs*') ? 'active' : '' }}"><a href="{{ route('DocumentationOverview') }}">Documentation</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @guest

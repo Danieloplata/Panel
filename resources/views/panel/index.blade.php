@@ -40,6 +40,11 @@
                 @endforeach
 
             </table>
+
+            <div align="center">
+                {{ $panels->links() }}
+            </div>
+
         </div>
     </div>
 @endsection
