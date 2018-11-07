@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Panel;
 use App\Respondent;
+use App\Country;
 
 class PanelController extends Controller
 {
@@ -57,7 +58,9 @@ class PanelController extends Controller
 
     public function create($projectID)
     {
-		return view('panel.create', compact('projectID'));
+        $countries = Country::all();
+
+		return view('panel.create', compact('projectID', 'countries'));
     }
 
     public function store(Request $request)

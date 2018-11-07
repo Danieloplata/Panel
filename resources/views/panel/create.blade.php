@@ -1,15 +1,22 @@
 @extends('layouts/master')
 
 @section('pagetitle')
-    Create a new panel
+  Create a new panel
+@endsection
+
+@section('assets')
+  <script src="{{ URL::asset('js/jquery.min.js') }}"></script> 
+  <link href="{{ URL::asset('css/bootstrap-select.css') }}" rel="stylesheet">
+  <script src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
+  <script>$('select').selectpicker();</script>
 @endsection
 
 @section('headerDropDown')
-    
+  
 @endsection
 
 @section('breadcrumb')
-    Home > Panel > Create a new panel
+  Home > Panel > Create a new panel
 @endsection
 
 @section('content')
@@ -40,39 +47,37 @@
                   <input type="text" class="form-control" name="panelName" id="panelName" placeholder="Enter a panel name" required>
                 </div>
               </div>
+            <div class="form-group">
+              <label for="projectLink" class="col-lg-3 control-label">Survey link</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" name="redirectLink" id="redirectLink" placeholder="Enter survey link" required>
+              </div>
+            </div>
+            <div id="panelCountries">
               <div class="form-group">
-                <label for="projectLink" class="col-lg-3 control-label">Survey link</label>
+                <label for="select" class="col-lg-3 control-label">Countries</label>
                 <div class="col-lg-8">
-                  <input type="text" class="form-control" name="redirectLink" id="redirectLink" placeholder="Enter survey link" required>
+                  <select class="form-control selectpicker" name="panelCountries" id="panelCountries" multiple data-live-search="true">
+                    @foreach ($countries as $country)
+                      <option value="{{ $country->id }}">{{ $country->countryName }}</option>
+                    @endforeach     
+                  </select>
                 </div>
               </div>
-              <div id="allowedCountriesInput">
-                  <div class="form-group">
-                    <label for="select" class="col-lg-3 control-label">Countries</label>
-                    <div class="col-lg-8">
-                      <select class="form-control" name="allowedCountries" id="allowedCountries" multiple="multiple">
-                          <option>Test</option>
-                      </select>
-                    </div>
-                  </div>
-              </div>
+            </div>
+            <div id="existingProviderInput">
               <div class="form-group">
-                <label class="col-lg-3 control-label">Panel type</label>
+                <label for="select" class="col-lg-3 control-label">Provider</label>
                 <div class="col-lg-8">
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="type" id="typeNew" value="1" checked="">
-                      New provider
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="type" id="typeExisting" value="2">
-                      Existing provider
-                    </label>
-                  </div>
+                  <select class="form-control" name="existingProvider" id="existingProvider">
+                      <option value="" disabled selected>Populate from existing provider</option>
+                      <option value="1">CINT</option>
+                      <option value="2">SSI</option>
+                      <option value="2">Research Now</option>      
+                  </select>
                 </div>
               </div>
+            </div>
             <div id="newProviderInput">
               <div class="form-group">
                 <label for="providerName" class="col-lg-3 control-label">Provider name</label>
@@ -88,17 +93,6 @@
                     <input type="text" class="form-control" name="quotaFullLink" id="quotaFullLink" placeholder="Enter quota full link">
                     <br />
                     <input type="text" class="form-control" name="screenoutLink" id="screenoutLink" placeholder="Enter screenout link">
-                  </div>
-                </div>
-              </div>
-              <div id="existingProviderInput">
-                <div class="form-group">
-                  <label for="select" class="col-lg-3 control-label">Provider</label>
-                  <div class="col-lg-8">
-                    <select class="form-control" name="existingProvider" id="existingProvider">
-                        <option value="" disabled selected>Select an existing provider</option>
-                        <option value="1">Populate from database</option>   
-                    </select>
                   </div>
                 </div>
               </div>
