@@ -20,8 +20,9 @@ class CreateCountriesTable extends Migration
         });
 
         Schema::create('country_panel', function (Blueprint $table) {
-            $table->integer('panel_id');
-            $table->integer('country_id');
+            $table->unsignedInteger('panel_id');
+            $table->unsignedInteger('country_id');
+            $table->timestamps();
             $table->primary(['panel_id', 'country_id']);
         });
 
