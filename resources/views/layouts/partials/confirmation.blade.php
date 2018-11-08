@@ -12,7 +12,7 @@
       </div>
       <div class="modal-footer bg-secondary">
         <!-- route('deletePanel', $panel->id) -->
-        <a href="#"<button type="button" class="btn btn-success pull-left">Yes, delete this</button></a>
+        <a href="{{ route('deletePanel', $panel->id) }}"<button type="button" class="btn btn-success pull-left">Yes, delete this</button></a>
         <button type="button" class="btn btn-danger" data-dismiss="modal">No, don't delete!</button>
       </div>
     </div>

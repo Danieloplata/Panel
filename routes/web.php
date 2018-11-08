@@ -45,7 +45,8 @@ Route::get('/discussion/{project}', 'DiscussionController@show')->name('showProj
 
 // Status pages
 // create a pages controller for random static pages
-Route::get('/thankyou', 'RedirectController@thankyou')->name('thankYou');
+Route::get('/thankyou', 'StaticPagesController@thankyou')->name('thankyou');
+Route::get('/error/{error}', 'StaticPagesController@error')->name('error');
 
 // Authentication routes
 Auth::routes();

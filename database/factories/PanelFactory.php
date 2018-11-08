@@ -11,9 +11,6 @@ $factory->define(App\Panel::class, function (Faker $faker) {
         'user_id' => function () {
     		return factory('App\User')->create()->id;
     	},
-    	'provider_id' => function () {
-            return factory('App\Provider')->create()->id;
-        },
         'panelName' => $faker->text($maxNbChars = 50),
         'redirectLink' => $faker->domainName . '/survey.php?=',
         'status' => 'LIVE',

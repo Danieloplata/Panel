@@ -9,6 +9,26 @@
   <link href="{{ URL::asset('css/bootstrap-select.css') }}" rel="stylesheet">
   <script src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
   <script>$('select').selectpicker();</script>
+  <script>
+    function getProvider() {
+      var provider = document.getElementById("existingProvider").value;
+
+      switch(provider) {
+        case "1":
+          document.getElementById("providerName").value = "CINT";
+          document.getElementById("completeLink").value = "https://s.cint.com/Survey/Complete?id=";
+          document.getElementById("quotaFullLink").value = "http://s.cint.com/Survey/QuotaFull?id=";
+          document.getElementById("screenoutLink").value = "http://s.cint.com/Survey/EarlyScreenOut?id=";
+          break;
+        case "2":
+          document.getElementById("providerName").value = "SSI Surveys";
+          document.getElementById("completeLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=1&psid=";
+          document.getElementById("quotaFullLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=3&psid=";
+          document.getElementById("screenoutLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=2&psid=";
+          break;
+      }
+    }
+  </script>
 @endsection
 
 @section('headerDropDown')
@@ -57,7 +77,7 @@
               <div class="form-group">
                 <label for="select" class="col-lg-3 control-label">Countries</label>
                 <div class="col-lg-8">
-                  <select class="form-control selectpicker" name="panelCountries" id="panelCountries" multiple data-live-search="true">
+                  <select class="form-control selectpicker" name="panelCountries[]" id="panelCountries" multiple data-live-search="true">
                     @foreach ($countries as $country)
                       <option value="{{ $country->id }}">{{ $country->countryName }}</option>
                     @endforeach     
@@ -69,11 +89,10 @@
               <div class="form-group">
                 <label for="select" class="col-lg-3 control-label">Provider</label>
                 <div class="col-lg-8">
-                  <select class="form-control" name="existingProvider" id="existingProvider">
+                  <select class="form-control" name="existingProvider" id="existingProvider" onchange="getProvider()">
                       <option value="" disabled selected>Populate from existing provider</option>
                       <option value="1">CINT</option>
-                      <option value="2">SSI</option>
-                      <option value="2">Research Now</option>      
+                      <option value="2">SSI</option>     
                   </select>
                 </div>
               </div>

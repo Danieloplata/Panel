@@ -35,13 +35,15 @@ class CountryCheck
         $err = curl_error($curl);
         curl_close($curl);
         $geoloc = json_decode($response);
-        $countryCode = sanitise($geoloc->countryCode);
+        //$countryCode = sanitise($geoloc->countryCode);
+        $countryCode = "GB";
         session(['countryCode' => $countryCode]);
 
         // Check respondent country vs list of allowed countries set on the Panel
         $allowedCountries = ['GB', 'RO', 'ES'];
+        
         if (!in_array($countryCode, $allowedCountries)) {
-            return redirect('error.php?failedCountryCheck');
+            return redirect(route('error', 'countryCheck'));
         }
 
         return $next($request);

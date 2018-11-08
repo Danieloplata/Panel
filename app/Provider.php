@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Provider extends Model
 {
 	protected $fillable = [
+		'panel_id',
 		'providerName',
 		'completeLink',
 		'quotaFullLink',
 		'screenoutLink'
 	];
 
-    public function panels()
+    public function panel()
     {
         return $this->belongsTo(Panel::class);
     }

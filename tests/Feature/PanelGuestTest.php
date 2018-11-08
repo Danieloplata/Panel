@@ -32,19 +32,17 @@ class PanelGuestTest extends TestCase
     }
 
     /** @test */
-    public function a_guest_may_not_create_panels()
-    {
-    	$panel = factory('App\Panel')->create();
-
-        $this->get(route('storePanel'), $panel->toArray())
-            ->assertRedirect('login');
-    }
-
-    /** @test */
     public function a_guest_may_not_view_the_create_panel_form()
     {
         $response = $this->get(route('createPanel', $this->project->id))
             ->assertRedirect(route('login'));
+    }
+
+    /** @test */
+    public function a_guest_may_not_create_panels()
+    {
+        $this->get(route('storePanel'), $this->panel->toArray())
+            ->assertRedirect('login');
     }
 
     /** @test */

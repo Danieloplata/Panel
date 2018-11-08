@@ -48,12 +48,7 @@ class RedirectController extends Controller
         ->first()
         ->update(['status' => $status]);
 		 
-		 return redirect()->route('thankYou');
-    }
-
-    public function thankyou()
-    {
-    	return view('panel.thankyou');
+		 return redirect()->route('thankyou');
     }
 
 }

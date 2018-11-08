@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Panel;
 use App\Respondent;
 use App\Country;
+use App\Provider;
+use App\CountryPanel;
 
 class PanelController extends Controller
 {
@@ -65,13 +67,33 @@ class PanelController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $panelData = $request->validate([
             'project_id' => 'required',
             'panelName' => 'required|max:150',
             'redirectLink' => 'required|url'
         ]);
 
-		$panel = Panel::create($data);
+		$panel = Panel::create($panelData);
+
+        $providerData = $request->validate([
+            'providerName' => 'required',
+            'completeLink' => 'required',
+            'quotaFullLink' => 'required',
+            'screenoutLink' => 'required' 
+        ]);
+
+        $providerData["panel_id"] = $panel->id;
+        $provider = Provider::create($providerData);
+
+        $countries = $request->panelCountries;
+
+        foreach ($countries as $country) 
+        {
+            $country = CountryPanel::create([
+                'panel_id' => $panel->id,
+                'country_id' => $country
+            ]);
+        }
 
 		return redirect()
             ->route('showPanel', $panel->id)

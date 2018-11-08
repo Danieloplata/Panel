@@ -15,11 +15,12 @@ class ProjectsWithPanelsSeeder extends Seeder
 
 		$projects->each(function($project) {
 			$panels = factory('App\Panel', 3)->create(['project_id' => $project->id, 'user_id' => $project->user_id]);
-			$provider = factory('App\Provider')->create();
 
             // each(function ($panel) use ($project, $provider)
 			$panels->each(function($panel) {
 				$respondents = factory('App\Respondent', 200)->create(['panel_id' => $panel->id]);
+                
+                $provider = factory('App\Provider')->create(['panel_id' => $panel->id]);
 			});
 
 		});

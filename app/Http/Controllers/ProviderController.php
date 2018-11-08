@@ -29,16 +29,18 @@ class ProviderController extends Controller
 		return view('providers.create');
     }
 
-    public function store()
+    public function store(Panel $panel)
     {
-		$this->validate(request(), [
+		$data = $this->validate(request(), [
             'providerName' => 'required',
             'completeLink' => 'required|url',
             'quotaFullLink' => 'required|url',
             'screenoutLink' => 'required|url',
         ]);
 
-        Provider::create(request()->all());
+        $data["panel_id"] = $panel->id;
+
+        Provider::create($data);
 
         session()->flash('message', 'Provider created');
 

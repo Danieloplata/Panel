@@ -17,6 +17,7 @@ class PanelAuthedTest extends TestCase
         $this->be($user = factory('App\User')->create());
         $this->project = factory('App\Project')->create();
         $this->panel = factory('App\Panel')->create(['project_id' => $this->project->id]);
+        $this->provider = factory('App\Provider')->create(['panel_id' => $this->panel->id]);
     }
 
 	/** @test */
@@ -34,20 +35,24 @@ class PanelAuthedTest extends TestCase
     }
 
     /** @test */
+    public function an_authenticated_user_can_view_the_create_panel_form()
+    {
+        $response = $this->get(route('createPanel', $this->project->id))
+            ->assertSee('Create a new panel');
+    }
+
+    /** @test */
     public function an_authenticated_user_can_create_panels()
     {
-    	$this->project = factory('App\Project')->create();
-        $this->panel = factory('App\Panel')->create(['project_id' => $this->project->id]);
-
         $this->get($this->project->path())
             ->assertSee($this->panel->panelName);
     }
 
     /** @test */
-    public function an_authenticated_user_can_view_the_create_panel_form()
+    public function an_authenticated_user_can_create_panel_providers()
     {
-        $response = $this->get(route('createPanel', $this->project->id))
-            ->assertSee('Create a new panel');
+        $this->get($this->panel->path())
+            ->assertSee($this->panel->provider->providerName);
     }
 
     /** @test */
