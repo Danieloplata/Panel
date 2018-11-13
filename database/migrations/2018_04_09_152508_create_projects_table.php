@@ -22,12 +22,12 @@ class CreateProjectsTable extends Migration
             $table->string('clientEmail');
             $table->string('methodology');
             $table->string('totalInterviews');
-            $table->string('questionnaireBy');
-            $table->string('scriptedBy');
-            $table->string('fieldStart');
-            $table->string('fieldEnd');
-            $table->string('dataSpecBy');
-            $table->string('finalDataBy');
+            $table->date('questionnaireBy');
+            $table->date('scriptedBy');
+            $table->date('fieldStart');
+            $table->date('fieldEnd');
+            $table->date('dataSpecBy');
+            $table->date('finalDataBy');
             $table->string('openQuestions');
             $table->string('codeframeRequired');
             $table->string('rawDataFormat');

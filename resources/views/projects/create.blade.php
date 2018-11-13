@@ -8,6 +8,10 @@
 
 @endsection
 
+@section('css_assets')
+<link rel="stylesheet" href="{{ URL::asset('css/flatpickr.red.css') }}">
+@endsection
+
 @section('breadcrumb')
     Home > Projects > New project
 @endsection
@@ -64,21 +68,21 @@
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Questionnaire by</b></td>
-                <td width="35%" colspan="2"><input type="input" class="textInput" id="questionnaireBy" name="questionnaireBy" placeholder="Click to select date" value="{{ old('questionnaireBy') }}" required/></td>
+                <td width="35%" colspan="2"><input type="input" class="selectDate" id="questionnaireBy" name="questionnaireBy" placeholder="Click to select date" value="{{ old('questionnaireBy') }}" required/></td>
                 <td width="15%" class="active"><b>Scripting Complete</b></td>
-                <td width="35%"><input type="input" class="textInput" id="scriptedBy" name="scriptedBy" placeholder="Click to select date" value="{{ old('scriptedBy') }}" required/></td>
+                <td width="35%"><input type="input" class="selectDate" id="scriptedBy" name="scriptedBy" placeholder="Click to select date" value="{{ old('scriptedBy') }}" required/></td>
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Fieldwork Start</b></td>
-                <td width="35%" colspan="2"><input type="input" class="textInput" id="fieldStart" name="fieldStart" placeholder="Click to select date" value="{{ old('fieldStart') }}" required/></td>
+                <td width="35%" colspan="2"><input type="input" class="selectDate" id="fieldStart" name="fieldStart" placeholder="Click to select date" value="{{ old('fieldStart') }}" required/></td>
                 <td width="15%" class="active"><b>Fieldwork End</b></td>
-                <td width="35%"><input type="input" class="textInput" id="fieldEnd" name="fieldEnd" placeholder="Click to select date" value="{{ old('fieldEnd') }}" required/></td>
+                <td width="35%"><input type="input" class="selectDate" id="fieldEnd" name="fieldEnd" placeholder="Click to select date" value="{{ old('fieldEnd') }}" required/></td>
               </tr>
               <tr>
                 <td width="20%" class="active"><b>Data spec by</b></td>
-                <td width="30%" colspan="2"><input type="input" class="textInput" id="dataSpecBy" name="dataSpecBy" placeholder="Click to select date" value="{{ old('dataSpecBy') }}" required/></td>
+                <td width="30%" colspan="2"><input type="input" class="selectDate" id="dataSpecBy" name="dataSpecBy" placeholder="Click to select date" value="{{ old('dataSpecBy') }}" required/></td>
                 <td width="20%" class="active"><b>Final Data by</b></td>
-                <td width="30%"><input type="input" class="textInput" id="finalDataBy" name="finalDataBy" placeholder="Click to select date" value="{{ old('finalDataBy') }}" required/></td>
+                <td width="30%"><input type="input" class="selectDate" id="finalDataBy" name="finalDataBy" placeholder="Click to select date" value="{{ old('finalDataBy') }}" required/></td>
               </tr>
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project deliverables</b></td>
@@ -143,4 +147,16 @@
       </form>
     </div>
 </div>
+@endsection
+
+@section('js_assets')
+<script src="{{ URL::asset('js/flatpickr.js') }}"></script>
+<script>
+  $(".selectDate").flatpickr({
+    altInput: true,
+    altInputClass: "selectDate",
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+  });
+</script>
 @endsection

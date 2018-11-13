@@ -4,31 +4,8 @@
   Create a new panel
 @endsection
 
-@section('assets')
-  <script src="{{ URL::asset('js/jquery.min.js') }}"></script> 
+@section('css_assets')
   <link href="{{ URL::asset('css/bootstrap-select.css') }}" rel="stylesheet">
-  <script src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
-  <script>$('select').selectpicker();</script>
-  <script>
-    function getProvider() {
-      var provider = document.getElementById("existingProvider").value;
-
-      switch(provider) {
-        case "1":
-          document.getElementById("providerName").value = "CINT";
-          document.getElementById("completeLink").value = "https://s.cint.com/Survey/Complete?id=";
-          document.getElementById("quotaFullLink").value = "http://s.cint.com/Survey/QuotaFull?id=";
-          document.getElementById("screenoutLink").value = "http://s.cint.com/Survey/EarlyScreenOut?id=";
-          break;
-        case "2":
-          document.getElementById("providerName").value = "SSI Surveys";
-          document.getElementById("completeLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=1&psid=";
-          document.getElementById("quotaFullLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=3&psid=";
-          document.getElementById("screenoutLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=2&psid=";
-          break;
-      }
-    }
-  </script>
 @endsection
 
 @section('headerDropDown')
@@ -132,4 +109,29 @@
       </div>
 
   </div>
+@endsection
+
+@section('js_assets')
+<script src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
+<script>$('select').selectpicker();</script>
+<script>
+  function getProvider() {
+    var provider = document.getElementById("existingProvider").value;
+
+    switch(provider) {
+      case "1":
+        document.getElementById("providerName").value = "CINT";
+        document.getElementById("completeLink").value = "https://s.cint.com/Survey/Complete?id=";
+        document.getElementById("quotaFullLink").value = "http://s.cint.com/Survey/QuotaFull?id=";
+        document.getElementById("screenoutLink").value = "http://s.cint.com/Survey/EarlyScreenOut?id=";
+        break;
+      case "2":
+        document.getElementById("providerName").value = "SSI Surveys";
+        document.getElementById("completeLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=1&psid=";
+        document.getElementById("quotaFullLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=3&psid=";
+        document.getElementById("screenoutLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=2&psid=";
+        break;
+    }
+  }
+</script>
 @endsection

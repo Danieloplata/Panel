@@ -9,8 +9,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('css/bootstrap.min.css?v=1') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css?v=13') }}" rel="stylesheet">
-    @yield('assets')
+    <link href="{{ URL::asset('css/style.css?v=14') }}" rel="stylesheet">
+    @yield('css_assets')
   </head>
 
   <body>
@@ -45,6 +45,6 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script> 
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-
+    @yield('js_assets')
   </body>
 </html>

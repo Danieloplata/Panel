@@ -35,7 +35,7 @@
                     <th class="vertical-align">{{ $project->id }}</th>
                     <th>{{ $project->projectName }}</th>
                     <th>{{ $project->methodology }}</th>
-                    <th>{{ $project->fieldEnd }}</th>
+                    <th>{{ \Carbon\Carbon::parse($project->fieldEnd)->diffForHumans() }}</th>
                     <th class="font-green">LIVE</th>
                     <th><a href="{{ url('/projects') }}/{{ $project->id }}"><button type="button" class="btn btn-danger">View</button></a></th>
                 </tr>
