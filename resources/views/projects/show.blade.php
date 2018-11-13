@@ -64,21 +64,21 @@
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Questionnaire by</b></td>
-                <td width="35%" colspan="2">{{ $project->questionnaireBy }}</td>
+                <td width="35%" colspan="2">{{ \Carbon\Carbon::parse($project->questionnaireBy)->format('F jS, Y') }}</td>
                 <td width="15%" class="active"><b>Scripting Complete</b></td>
-                <td width="35%">{{ $project->scriptedBy }}</td>
+                <td width="35%">{{ \Carbon\Carbon::parse($project->scriptedBy)->format('F jS, Y') }}</td>
               </tr>
               <tr>
                 <td width="15%" class="active"><b>Fieldwork Start</b></td>
-                <td width="35%" colspan="2">{{ $project->fieldStart }}</td>
+                <td width="35%" colspan="2">{{ \Carbon\Carbon::parse($project->fieldStart)->format('F jS, Y') }}</td>
                 <td width="15%" class="active"><b>Fieldwork End</b></td>
-                <td width="35%">{{ $project->fieldEnd }}</td>
+                <td width="35%">{{ \Carbon\Carbon::parse($project->fieldEnd)->format('F jS, Y') }}</td>
               </tr>
               <tr>
                 <td width="20%" class="active"><b>Data spec by</b></td>
-                <td width="30%" colspan="2">{{ $project->dataSpecBy }}</td>
+                <td width="30%" colspan="2">{{ \Carbon\Carbon::parse($project->dataSpecBy)->format('F jS, Y') }}</td>
                 <td width="20%" class="active"><b>Final Data by</b></td>
-                <td width="30%">{{ $project->finalDataBy }}</td>
+                <td width="30%">{{ \Carbon\Carbon::parse($project->finalDataBy)->format('F jS, Y') }}</td>
               </tr>
               <tr>
                 <td colspan="5" align="center" class="panel-heading main-color-bg"><b>Project panels</b></td>
