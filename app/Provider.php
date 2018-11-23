@@ -18,4 +18,9 @@ class Provider extends Model
     {
         return $this->belongsTo(Panel::class);
     }
+
+    public function respondents()
+    {
+    	return $this->hasMany(Respondent::class);
+    }
 }

@@ -8,7 +8,10 @@ $factory->define(App\Respondent::class, function (Faker $faker) {
         'panel_id' => function () {
     		return factory('App\Panel')->create()->id;
     	},
-    	'providerID' => $faker->swiftBicNumber,
+    	'provider_id' => function () {
+            return factory('App\Provider')->create()->id;
+        },
+        'respondentID' => $faker->swiftBicNumber,
         'ipAddress' => $faker->ipv4,
         'userAgent' => $faker->userAgent,
         'countryCode' => $faker->numberBetween($min = 1, $max = 245),

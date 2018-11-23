@@ -19,12 +19,16 @@ class RedirectController extends Controller
     public function start($panelID, $respondentID) {
 
     	$panelID = sanitise($panelID);
+        session(['panelID' => $panelID]);
 		$respondentID = sanitise($respondentID);
 		//$countryCode = session('countryCode');
         $countryCode = 231;
+
+        $panel = Panel::findOrFail($panelID);
 		
         Respondent::create([
 			'panel_id' => $panelID,
+            'provider_id' => $panel->provider->id,
 			'respondentID' => $respondentID,
 			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
 			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
@@ -32,8 +36,6 @@ class RedirectController extends Controller
 			'status' => "Incomplete",
     	]);
 		
-        $panel = Panel::findOrFail($panelID);
-      
         return redirect($panel->redirectLink . $respondentID);
 	}
 

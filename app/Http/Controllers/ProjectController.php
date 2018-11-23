@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Project;
+use App\Exports\ProjectsExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
@@ -106,6 +109,12 @@ class ProjectController extends Controller
         return redirect()
             ->route('projectsOverview')
             ->with('message', 'Project deleted');
+    }
+
+    public function export(Project $project) 
+    {
+        $filename = str_slug($project->projectName) . '_DBF.xlsx';
+        return (new ProjectsExport)->forProject($project)->download($filename);
     }
 
 }

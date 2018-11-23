@@ -1,5 +1,5 @@
 Panel redirect:
- ☐ allowedCountries dynamically assigned from Panel @high
+ ✔ allowedCountries dynamically assigned from Panel @high @done (18-11-22 15:07)
  ☐ Duplicate check middleware @high
  ☐ If the related panel is marked complete, don't allow redirects
  ☐ Log all failed entries (where user was kicked out) @low

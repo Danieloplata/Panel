@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Panel;
 
 class CountryCheck
 {
@@ -15,6 +16,9 @@ class CountryCheck
      */
     public function handle($request, Closure $next)
     {
+        $panelID = $request->route()->parameter('panelid');
+        $panel = Panel::findOrFail($panelID);
+        $allowedCountries = $panel->countries->pluck('countryCode')->toArray();
 
         // Replace this with CloudFlare, use CF headers for it
         $curl = curl_init();
@@ -38,12 +42,9 @@ class CountryCheck
         //$countryCode = sanitise($geoloc->countryCode);
         $countryCode = "GB";
         session(['countryCode' => $countryCode]);
-
-        // Check respondent country vs list of allowed countries set on the Panel
-        $allowedCountries = ['GB', 'RO', 'ES'];
         
         if (!in_array($countryCode, $allowedCountries)) {
-            return redirect(route('error', 'countryCheck'));
+            return redirect(route('error', 'country'));
         }
 
         return $next($request);

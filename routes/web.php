@@ -12,8 +12,10 @@ Route::prefix('panel')->middleware('auth')->group(function () {
 	Route::get('/{panel}/edit', 'PanelController@edit')->name('editPanel');
 	Route::patch('/{panel}', 'PanelController@update')->name('updatePanel');
 	Route::delete('/{panel}', 'PanelController@destroy')->name('deletePanel');
-	Route::get('/{panelID}/respondents', 'RespondentController@index')->name('showRespondents');
-	Route::get('/{panelID}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
+	Route::get('/{panel}/respondents', 'RespondentController@index')->name('showRespondents');
+	Route::get('/{panel}/respondents/export', 'RespondentController@export')->name('exportAllRespondents');
+	Route::get('/{panel}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
+
 });
 
 // Panel Redirect
@@ -33,6 +35,7 @@ Route::prefix('projects')->middleware('auth')->group(function () {
     Route::get('/{project}/edit', 'ProjectController@edit')->name('editProject');
     Route::patch('/{project}', 'ProjectController@update')->name('updateProject');
     Route::delete('/{project}', 'ProjectController@destroy')->name('deleteProject');
+    Route::get('/{project}/export', 'ProjectController@export')->name('exportProject');
 });
 
 // Help section routing
