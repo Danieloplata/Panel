@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Panel;
-use App\Respondent;
 use App\Country;
 use App\Provider;
 use App\CountryPanel;
@@ -83,13 +82,13 @@ class PanelController extends Controller
         ]);
 
         $providerData["panel_id"] = $panel->id;
-        $provider = Provider::create($providerData);
+        Provider::create($providerData);
 
         $countries = $request->panelCountries;
 
         foreach ($countries as $country) 
         {
-            $country = CountryPanel::create([
+            CountryPanel::create([
                 'panel_id' => $panel->id,
                 'country_id' => $country
             ]);

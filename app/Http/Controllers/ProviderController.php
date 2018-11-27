@@ -40,7 +40,7 @@ class ProviderController extends Controller
 
         $data["panel_id"] = $panel->id;
 
-        Provider::create($data);
+        $provider = Provider::create($data);
 
         session()->flash('message', 'Provider created');
 
