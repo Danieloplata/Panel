@@ -4,6 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Panel
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Country[] $countries
+ * @property-read \App\Project $project
+ * @property-read \App\Provider $provider
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Respondent[] $respondents
+ * @property-read \App\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Panel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Panel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Panel query()
+ * @mixin \Eloquent
+ */
 class Panel extends Model
 {
 	// Set fillable form fields

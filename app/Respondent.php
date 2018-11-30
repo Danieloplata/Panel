@@ -4,6 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Respondent
+ *
+ * @property-read \App\Panel $panel
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Project[] $project
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Respondent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Respondent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Respondent query()
+ * @mixin \Eloquent
+ */
 class Respondent extends Model
 {
 	protected $primaryKey = 'id';
