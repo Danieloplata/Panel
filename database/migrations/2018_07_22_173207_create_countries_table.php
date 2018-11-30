@@ -23,7 +23,6 @@ class CreateCountriesTable extends Migration
             $table->unsignedInteger('panel_id');
             $table->unsignedInteger('country_id');
             $table->timestamps();
-            $table->primary(['panel_id', 'country_id']);
         });
 
     }
