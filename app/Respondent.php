@@ -20,7 +20,6 @@ class Respondent extends Model
 
     protected $fillable = [
         'panel_id',
-        'provider_id',
         'respondentID',
         'ipAddress',
         'userAgent',

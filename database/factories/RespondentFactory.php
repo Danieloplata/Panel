@@ -8,9 +8,6 @@ $factory->define(App\Respondent::class, function (Faker $faker) {
         'panel_id' => function () {
     		return factory('App\Panel')->create()->id;
     	},
-    	'provider_id' => function () {
-            return factory('App\Provider')->create()->id;
-        },
         'respondentID' => $faker->swiftBicNumber,
         'ipAddress' => $faker->ipv4,
         'userAgent' => $faker->userAgent,

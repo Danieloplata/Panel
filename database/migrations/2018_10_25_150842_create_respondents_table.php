@@ -16,7 +16,6 @@ class CreateRespondentsTable extends Migration
         Schema::create('respondents', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('panel_id');
-            $table->string('providerID');
             $table->string('respondentID');
             $table->string('ipAddress');
             $table->string('userAgent');
