@@ -12,7 +12,7 @@ $factory->define(App\Respondent::class, function (Faker $faker) {
         'ipAddress' => $faker->ipv4,
         'userAgent' => $faker->userAgent,
         'countryCode' => $faker->numberBetween($min = 1, $max = 245),
-        'status' => $faker->randomElement($array = array ('Complete','QuotaFull','Incomplete','Screenout')),
+        'status' => $faker->randomElement($array = array ('complete','quotafull','incomplete','screenout')),
         'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
     ];

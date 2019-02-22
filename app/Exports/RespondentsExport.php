@@ -22,7 +22,6 @@ class RespondentsExport implements FromQuery, WithHeadings, ShouldAutoSize
             'id',
             'Panel ID',
             'Provider ID',
-            'Respondent ID',
             'IP Address',
             'User Agent',
             'Country',
