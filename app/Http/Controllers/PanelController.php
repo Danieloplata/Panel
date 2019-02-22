@@ -27,10 +27,10 @@ class PanelController extends Controller
     public function show(Panel $panel)
     {
         $totalResponses = $panel->respondents->count();
-        $completeResponses = $panel->respondents->where('status', 'Complete')->count();
-        $incompleteResponses = $panel->respondents->where('status', 'Incomplete')->count();
-        $quotaFullResponses = $panel->respondents->where('status', 'QuotaFull')->count();
-        $screenoutResponses = $panel->respondents->where('status', 'Screenout')->count();
+        $completeResponses = $panel->respondents->where('status', 'complete')->count();
+        $incompleteResponses = $panel->respondents->where('status', 'incomplete')->count();
+        $quotaFullResponses = $panel->respondents->where('status', 'quotafull')->count();
+        $screenoutResponses = $panel->respondents->where('status', 'screenout')->count();
 
         if($totalResponses == 0 OR $screenoutResponses == 0) {
             $screenoutRate = 0;

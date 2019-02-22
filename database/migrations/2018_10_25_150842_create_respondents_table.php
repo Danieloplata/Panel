@@ -20,7 +20,7 @@ class CreateRespondentsTable extends Migration
             $table->string('ipAddress');
             $table->string('userAgent');
             $table->unsignedInteger('countryCode');
-            $table->string('status')->default('Incomplete');
+            $table->string('status')->default('incomplete');
             $table->timestamps();
         });
     }

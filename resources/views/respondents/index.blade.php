@@ -19,25 +19,25 @@
                      </a>
                 </li>
                 <li>
-                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'Complete']) }}">
+                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'complete']) }}">
                         <span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span>
                          Completes
                      </a>
                 </li>
                 <li>
-                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'Incomplete']) }}">
+                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'incomplete']) }}">
                         <span class="glyphicon glyphicon-pencil font-orange" aria-hidden="true"></span>
                          Incompletes
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'QuotaFull']) }}">
+                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'quotafull']) }}">
                         <span class="glyphicon glyphicon-floppy-open font-blue" aria-hidden="true"></span>
                          Quota fulls
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'Screenout']) }}">
+                    <a href="{{ route('showFilteredRespondents', ['panelID' => $panel->id, 'status' => 'screenout']) }}">
                         <span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span>
                          Screenouts
                     </a>
@@ -74,7 +74,7 @@
                 @foreach ($respondents as $respondent)
                 <tr>
                     <th class="vertical-align">{{ $respondent->id }}</th>
-                    <th>{{ $respondent->providerID }}</th>
+                    <th>{{ $respondent->respondentID }}</th>
                     <th>{{ $respondent->countryCode }}</th>
                     <th>Greater Manchester</th>
                     <th>{{ $respondent->status }}</th>

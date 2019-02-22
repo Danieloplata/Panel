@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Panel extends Model
 {
-	// Set fillable form fields
 	protected $fillable = [
         'project_id',
 		'panelName',

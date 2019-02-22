@@ -12,7 +12,7 @@ class RedirectController extends Controller
 {
     public function __construct()
     {
-    	$this->middleware('countryCheck');
+    	$this->middleware(['CountryCheck', 'DuplicateCheck']);
         //$this->middleware('auth', ['except' => ['start', 'passback', 'thankyou']]);
     }
 
@@ -33,7 +33,7 @@ class RedirectController extends Controller
 			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
 			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
 			'countryCode' => $countryCode,
-			'status' => "Incomplete",
+			'status' => "incomplete",
     	]);
 		
         return redirect($panel->redirectLink . $respondentID);
@@ -46,9 +46,9 @@ class RedirectController extends Controller
 		$respondentID = sanitise($respondentID);
 		
         Respondent::where('panel_id', $panelID)
-        ->where('respondentID', $respondentID)
-        ->first()
-        ->update(['status' => $status]);
+            ->where('respondentID', $respondentID)
+            ->first()
+            ->update(['status' => $status]);
 		 
 		 return redirect()->route('thankyou');
     }
