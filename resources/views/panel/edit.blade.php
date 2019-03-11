@@ -4,6 +4,10 @@
     Edit panel: {{ $panel->panelName }}
 @endsection
 
+@section('css_assets')
+  <link href="{{ URL::asset('css/bootstrap-select.css') }}" rel="stylesheet">
+@endsection
+
 @section('headerDropDown')
     
 @endsection
@@ -24,8 +28,6 @@
       </div>
 
       <div class="col-lg-8">
-
-          <!-- Start of form body {{ url('/panel') }} -->
           <div class="panel-body">
             @include('layouts/partials/errors')
             <form id="createPanelForm" class="form-horizontal" role="form" method="POST" action="{{ route('updatePanel', $panel->id) }}";>
@@ -46,48 +48,15 @@
                   <input type="text" class="form-control" name="redirectLink" id="redirectLink" placeholder="Enter survey link" value="{{ $panel->redirectLink }}" required>
                 </div>
               </div>
-              <div id="allowedCountriesInput">
-                  <div class="form-group">
-                    <label for="select" class="col-lg-3 control-label">Countries</label>
-                    <div class="col-lg-8">
-                      <select class="form-control" name="allowedCountries" id="allowedCountries" multiple="multiple">
-                          <option>Test</option>
-                      </select>
-                    </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Panel type</label>
-                <div class="col-lg-8">
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="type" id="typeNew" value="1" checked="">
-                      New provider
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="type" id="typeExisting" value="2">
-                      Existing provider
-                    </label>
-                  </div>
-                </div>
-              </div>
-            <div id="newProviderInput">
-              <div class="form-group">
-                <label for="providerName" class="col-lg-3 control-label">Provider name</label>
-                <div class="col-lg-8">
-                  <input type="text" class="form-control" name="providerName" id="providerName" placeholder="Enter name of company">
-                </div>
-              </div>
+              <div id="panelCountries">
                 <div class="form-group">
-                  <label for="completeLink" class="col-lg-3 control-label">Redirect links</label>
+                  <label for="select" class="col-lg-3 control-label">Countries</label>
                   <div class="col-lg-8">
-                    <input type="text" class="form-control" name="completeLink" id="completeLink" placeholder="Enter completion link">
-                    <br />
-                    <input type="text" class="form-control" name="quotaFullLink" id="quotaFullLink" placeholder="Enter quota full link">
-                    <br />
-                    <input type="text" class="form-control" name="screenoutLink" id="screenoutLink" placeholder="Enter screenout link">
+                    <select class="form-control selectpicker" name="panelCountries[]" id="panelCountries" multiple data-live-search="true" multiple data-selected-values="100,122,133">
+                      @foreach ($countries as $country)
+                        <option value="{{ $country->id }}">{{ $country->countryName }}</option>
+                      @endforeach     
+                    </select>
                   </div>
                 </div>
               </div>
@@ -95,10 +64,29 @@
                 <div class="form-group">
                   <label for="select" class="col-lg-3 control-label">Provider</label>
                   <div class="col-lg-8">
-                    <select class="form-control" name="existingProvider" id="existingProvider">
-                        <option value="" disabled selected>Select an existing provider</option>
-                        <option value="1">Populate from database</option>   
+                    <select class="form-control" name="existingProvider" id="existingProvider" onchange="getProvider()">
+                        <option value="" disabled selected>Populate from existing provider</option>
+                        <option value="1">CINT</option>
+                        <option value="2">SSI</option>     
                     </select>
+                  </div>
+                </div>
+              </div>
+              <div id="newProviderInput">
+                <div class="form-group">
+                  <label for="providerName" class="col-lg-3 control-label">Provider name</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" name="providerName" id="providerName" value="{{ $panel->provider->providerName }}">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="completeLink" class="col-lg-3 control-label">Redirect links</label>
+                  <div class="col-lg-8">
+                    <input type="text" class="form-control" name="completeLink" id="completeLink" value="{{ $panel->provider->completeLink }}">
+                    <br />
+                    <input type="text" class="form-control" name="quotaFullLink" id="quotaFullLink" value="{{ $panel->provider->completeLink }}">
+                    <br />
+                    <input type="text" class="form-control" name="screenoutLink" id="screenoutLink" value="{{ $panel->provider->completeLink }}">
                   </div>
                 </div>
               </div>
@@ -119,4 +107,29 @@
       </div>
 
   </div>
+@endsection
+
+@section('js_assets')
+<script src="{{ URL::asset('js/bootstrap-select.js') }}"></script>
+<script>$('select').selectpicker('val', ['Mustard','Relish']);</script>
+<script>
+  function getProvider() {
+    var provider = document.getElementById("existingProvider").value;
+
+    switch(provider) {
+      case "1":
+        document.getElementById("providerName").value = "CINT";
+        document.getElementById("completeLink").value = "https://s.cint.com/Survey/Complete?id=";
+        document.getElementById("quotaFullLink").value = "http://s.cint.com/Survey/QuotaFull?id=";
+        document.getElementById("screenoutLink").value = "http://s.cint.com/Survey/EarlyScreenOut?id=";
+        break;
+      case "2":
+        document.getElementById("providerName").value = "SSI Surveys";
+        document.getElementById("completeLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=1&psid=";
+        document.getElementById("quotaFullLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=3&psid=";
+        document.getElementById("screenoutLink").value = "http://dkr1.ssisurveys.com/projects/end?rst=2&psid=";
+        break;
+    }
+  }
+</script>
 @endsection

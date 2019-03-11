@@ -101,7 +101,9 @@ class PanelController extends Controller
 
     public function edit(Panel $panel)
     {
-        return view('panel.edit', compact('panel'));
+        $countries = Country::all();
+
+        return view('panel.edit', compact('panel', 'countries'));
     }
 
     public function update(Request $request, Panel $panel) 

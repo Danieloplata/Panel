@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Project;
-use App\Panel;
 use App\Observers\ProjectObserver;
+use App\Panel;
+use App\Observers\PanelObserver;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
