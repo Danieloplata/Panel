@@ -29,12 +29,12 @@ class PanelActivityTest extends TestCase
     }
 
     /** @test */
-    // function updating_a_panel_generates_activity()
-    // {
-    //     $this->project->update(['projectName' => 'changed']);
+    function updating_a_panel_generates_activity()
+    {
+        $this->panel->update(['panelName' => 'changed']);
 
-    //     $this->assertCount(2, $this->project->activity);
-    //     $this->assertEquals('updated', $this->project->activity->last()->description);
-    // }
+        $this->assertCount(3, $this->project->activity);
+        $this->assertEquals('panel_updated', $this->project->activity->last()->description);
+    }
 
 }

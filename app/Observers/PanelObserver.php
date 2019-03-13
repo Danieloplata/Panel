@@ -45,7 +45,7 @@ class PanelObserver
     {
         Activity::create([
             'project_id' => $panel->project->id,
-            'description' => 'panel_updated'
+            'description' => 'panel_deleted'
         ]);
     }
 

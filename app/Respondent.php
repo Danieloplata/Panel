@@ -20,10 +20,10 @@ class Respondent extends Model
 
     protected $fillable = [
         'panel_id',
+        'country_id',
         'respondentID',
         'ipAddress',
         'userAgent',
-        'countryCode',
         'status',
     ];
 
@@ -34,5 +34,9 @@ class Respondent extends Model
     public function project()
     {
         return $this->belongsToMany(Project::class);
+    }
+    public function country()
+    {
+        return $this->hasOne(Country::class, 'id', 'country_id');
     }
 }

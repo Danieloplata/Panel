@@ -16,10 +16,10 @@ class CreateRespondentsTable extends Migration
         Schema::create('respondents', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('panel_id');
+            $table->unsignedInteger('country_id');
             $table->string('respondentID');
             $table->string('ipAddress');
             $table->string('userAgent');
-            $table->unsignedInteger('countryCode');
             $table->string('status')->default('incomplete');
             $table->timestamps();
         });

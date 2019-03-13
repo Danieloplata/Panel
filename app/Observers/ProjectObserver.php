@@ -17,7 +17,7 @@ class ProjectObserver
     {
         Activity::create([
             'project_id' => $project->id,
-            'description' => 'created'
+            'description' => 'project_created'
         ]);
     }
 
@@ -31,7 +31,7 @@ class ProjectObserver
     {
         Activity::create([
             'project_id' => $project->id,
-            'description' => 'updated'
+            'description' => 'project_updated'
         ]);
     }
 

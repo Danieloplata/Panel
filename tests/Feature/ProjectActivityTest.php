@@ -21,7 +21,7 @@ class ProjectActivityTest extends TestCase
     function creating_a_project_generates_activity()
     {
         $this->assertCount(1, $this->project->activity);
-        $this->assertEquals('created', $this->project->activity[0]->description);
+        $this->assertEquals('project_created', $this->project->activity[0]->description);
     }
 
     /** @test */
@@ -30,6 +30,6 @@ class ProjectActivityTest extends TestCase
         $this->project->update(['projectName' => 'changed']);
 
         $this->assertCount(2, $this->project->activity);
-        $this->assertEquals('updated', $this->project->activity->last()->description);
+        $this->assertEquals('project_updated', $this->project->activity->last()->description);
     }
 }
