@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         Project::observe(ProjectObserver::class);
         Panel::observe(PanelObserver::class);
+
+        if(config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
     }
 
     /**
