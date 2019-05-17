@@ -43,7 +43,7 @@ class ProjectAuthedTest extends TestCase
     /** @test */
     public function an_authenticated_user_can_view_the_create_project_form()
     {
-        $response = $this->get(route('createProject'))
+        $this->get(route('createProject'))
             ->assertSee('Create a new project');
     }
 

@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Project extends Model
 {
+    use RecordsActivity;
+
     // Set fillable form fields
 	protected $fillable = [
         'user_id',
@@ -55,9 +57,14 @@ class Project extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * The activity feed for the project.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function activity()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasMany(Activity::class)->latest();
     }
 
 }

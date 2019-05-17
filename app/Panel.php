@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Panel extends Model
 {
+    use RecordsActivity;
+
 	protected $fillable = [
         'project_id',
 		'panelName',

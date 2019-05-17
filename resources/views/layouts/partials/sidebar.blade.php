@@ -8,16 +8,7 @@
     <a href="{{ route('documentationOverview') }}" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Documentation</a>
 </div>
 
-<div class="list-group">
-    <a href="#" class="list-group-item active main-color-bg title">
-        Activity
-    </a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-plus font-green" aria-hidden="true"></span> Project created</a>   
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-cog font-orange" aria-hidden="true"></span> Project updated</a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-plus font-green" aria-hidden="true"></span> Panel added to project</a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-ok font-green" aria-hidden="true"></span> Project marked as complete</a>
-    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-remove font-red" aria-hidden="true"></span> Project deleted</a>
-</div>
+@include("layouts.partials.activity.card")
 
 <div class="well well-progress-bars">
     <h4>Frontend Completion</h4>
