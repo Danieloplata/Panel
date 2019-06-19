@@ -106,7 +106,12 @@ class PanelController extends Controller
         return view('panel.edit', compact('panel', 'countries'));
     }
 
-    public function update(Request $request, Panel $panel) 
+    /**
+     * @param Request $request
+     * @param Panel $panel
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, Panel $panel)
     {
         $data = $request->validate([
             'panelName' => 'required|max:150',
