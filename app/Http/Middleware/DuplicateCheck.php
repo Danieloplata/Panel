@@ -18,8 +18,7 @@ class DuplicateCheck
      */
     public function handle($request, Closure $next)
     {
-        
-        // Check respondent ID vs the database
+
         $panelID = $request->route()->parameter('panelid');
         $respondentID = $request->route()->parameter('respondentid');
 
