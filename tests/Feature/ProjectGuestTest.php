@@ -10,7 +10,7 @@ class ProjectGuestTest extends TestCase
 {
 	use RefreshDatabase;
 
-	public function setUp() 
+	public function setUp(): void
 	{
         parent::setup();
         $this->project = factory('App\Project')->create();
