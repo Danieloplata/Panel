@@ -17,7 +17,7 @@ Projects:
  ✔ Add functionality to delete projects @done (18-10-26 15:21)
  ☐ Add functionality to delete panels and respondents along with projects
  ☐ Add functionality to enable projects to be marked as complete
- ☐ Export project information to excel (DBF) @low
+ ✔ Export project information to excel (DBF) @low
 
 Respondents:
  ☐ Define the relationship between respondent and country
