@@ -15,7 +15,7 @@ class PanelController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
     	$panels = Panel::latest()
@@ -26,33 +26,7 @@ class PanelController extends Controller
 
     public function show(Panel $panel)
     {
-        $totalResponses = $panel->respondents->count();
-        $completeResponses = $panel->respondents->where('status', 'complete')->count();
-        $incompleteResponses = $panel->respondents->where('status', 'incomplete')->count();
-        $quotaFullResponses = $panel->respondents->where('status', 'quotafull')->count();
-        $screenoutResponses = $panel->respondents->where('status', 'screenout')->count();
-
-        if($totalResponses == 0 OR $screenoutResponses == 0) {
-            $screenoutRate = 0;
-        } else {
-            $screenoutRate = number_format(($screenoutResponses / $totalResponses) * 100, 2);
-        }
-
-        if($totalResponses == 0 OR $completeResponses == 0) {
-            $incidenceRate = 0;
-        } else {
-            $incidenceRate = number_format(($completeResponses / $totalResponses) * 100, 2);
-        }
-
-        $responseStatistics = (object) [
-            'totalResponses' => $totalResponses,
-            'completeResponses' => $completeResponses,
-            'incompleteResponses' => $incompleteResponses,
-            'quotaFullResponses' => $quotaFullResponses,
-            'screenoutResponses' => $screenoutResponses,
-            'screenoutRate' => $screenoutRate,
-            'incidenceRate' => $incidenceRate
-        ];
+        $responseStatistics = $panel->getResponseStatistics();
 
 		return view('panel.show', compact('panel', 'responseStatistics'));
     }

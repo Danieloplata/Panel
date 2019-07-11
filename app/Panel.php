@@ -57,4 +57,37 @@ class Panel extends Model
         return '/panel/' .  $this->id;
     }
 
+    public function getResponseStatistics()
+    {
+        $totalResponses = $this->respondents->count();
+        $completeResponses = $this->respondents->where('status', 'complete')->count();
+        $incompleteResponses = $this->respondents->where('status', 'incomplete')->count();
+        $quotaFullResponses = $this->respondents->where('status', 'quotafull')->count();
+        $screenoutResponses = $this->respondents->where('status', 'screenout')->count();
+
+        if($totalResponses == 0 OR $screenoutResponses == 0) {
+            $screenoutRate = 0;
+        } else {
+            $screenoutRate = number_format(($screenoutResponses / $totalResponses) * 100, 2);
+        }
+
+        if($totalResponses == 0 OR $completeResponses == 0) {
+            $incidenceRate = 0;
+        } else {
+            $incidenceRate = number_format(($completeResponses / $totalResponses) * 100, 2);
+        }
+
+        $responseStatistics = (object) [
+            'totalResponses' => $totalResponses,
+            'completeResponses' => $completeResponses,
+            'incompleteResponses' => $incompleteResponses,
+            'quotaFullResponses' => $quotaFullResponses,
+            'screenoutResponses' => $screenoutResponses,
+            'screenoutRate' => $screenoutRate,
+            'incidenceRate' => $incidenceRate
+        ];
+
+        return $responseStatistics;
+    }
+
 }
