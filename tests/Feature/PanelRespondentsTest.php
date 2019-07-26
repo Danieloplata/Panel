@@ -15,6 +15,7 @@ class PanelRespondentsTest extends TestCase
      */
     public function testExample()
     {
-        $this->assertTrue(true);
+        $this->get('/')
+            ->assertStatus(302);
     }
 }
