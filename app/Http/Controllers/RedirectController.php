@@ -28,15 +28,14 @@ class RedirectController extends Controller
 		
         Respondent::create([
 			'panel_id' => $panelID,
-            'provider_id' => $panel->provider->id,
+            'country_id' => $countryCode,
 			'respondentID' => $respondentID,
 			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
 			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
-			'countryCode' => $countryCode,
 			'status' => "incomplete",
     	]);
-		
-        return redirect($panel->redirectLink . $respondentID);
+
+        return redirect()->away($panel->redirectLink . $respondentID);
 	}
 
     public function passback($panelID, $status, $respondentID)
