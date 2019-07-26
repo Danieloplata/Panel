@@ -26,7 +26,7 @@ class PanelController extends Controller
 
     public function show(Panel $panel)
     {
-        $responseStatistics = $panel->getResponseStatistics();
+        $responseStatistics = $panel->getResponseStatistics($panel);
 
 		return view('panel.show', compact('panel', 'responseStatistics'));
     }
