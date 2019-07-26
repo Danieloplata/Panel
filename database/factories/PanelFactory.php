@@ -12,7 +12,7 @@ $factory->define(App\Panel::class, function (Faker $faker) {
     		return factory('App\User')->create()->id;
     	},
         'panelName' => $faker->text($maxNbChars = 50),
-        'redirectLink' => $faker->domainName . '/survey.php?=',
+        'redirectLink' => 'https://' . $faker->domainName . '/survey/',
         'status' => 'LIVE',
         'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
