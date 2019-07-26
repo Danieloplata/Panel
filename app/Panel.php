@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * App\Panel
@@ -57,7 +59,7 @@ class Panel extends Model
         return '/panel/' .  $this->id;
     }
 
-    public function getResponseStatistics()
+    public function getResponseStatistics($panel)
     {
         $totalResponses = $this->respondents->count();
         $completeResponses = $this->respondents->where('status', 'complete')->count();
@@ -77,6 +79,16 @@ class Panel extends Model
             $incidenceRate = number_format(($completeResponses / $totalResponses) * 100, 2);
         }
 
+        $getAverageCompletionTime = DB::table('respondents')
+            ->select(DB::raw("AVG(TIME_TO_SEC(TIMEDIFF(updated_at, created_at))) AS timediff"))
+            ->where('panel_id', $panel->id)
+            ->where('status', 'complete')
+            ->get();
+
+        $averageCompletionTime = CarbonInterval::seconds((int)$getAverageCompletionTime[0]->timediff)
+            ->cascade()
+            ->forHumans();
+
         $responseStatistics = (object) [
             'totalResponses' => $totalResponses,
             'completeResponses' => $completeResponses,
@@ -84,7 +96,8 @@ class Panel extends Model
             'quotaFullResponses' => $quotaFullResponses,
             'screenoutResponses' => $screenoutResponses,
             'screenoutRate' => $screenoutRate,
-            'incidenceRate' => $incidenceRate
+            'incidenceRate' => $incidenceRate,
+            'averageCompletionTime' => $averageCompletionTime
         ];
 
         return $responseStatistics;
