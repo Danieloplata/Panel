@@ -47,7 +47,7 @@
                   <td width="15%" class="active"><b>Provider</b></td>
                   <td width="35%" colspan="2">{{ $panel->provider->providerName }}</td>
                   <td width="15%" class="active"><b>Created by</b></td>
-                  <td width="35%">Test</td>
+                  <td width="35%">Dan</td>
                 </tr>
                 <tr>
                   <td width="15%" class="active"><b>Countries</b></td>
@@ -87,6 +87,12 @@
                   <td width="35%" colspan="2">{{ $responseStatistics->incidenceRate }}%</td>
                   <td width="15%" class="active"><b>Screenouts (%)</b></td>
                   <td width="35%">{{ $responseStatistics->screenoutRate }}%</td>
+                </tr>
+                <tr>
+                    <td width="15%" class="active"><b>Average LOI</b></td>
+                    <td width="35%" colspan="5">
+                        {{ $responseStatistics->averageCompletionTime }}
+                    </td>
                 </tr>
                 <tr>
                   <td class="panel-heading main-color-bg" align="center" colspan="5"><b>Links for Provider</b></td>

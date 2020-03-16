@@ -63,10 +63,9 @@
         <div class="panel-body">
             <table class="table table-striped table-hover centre-text">
                 <tr>
+                    <th>ID</th>
                     <th>RESPONDENT ID</th>
-                    <th>PROVIDER ID</th>
                     <th>COUNTRY</th>
-                    <th>REGION</th>
                     <th>STATUS</th>
                     <th>TIMESTAMP</th>
                 </tr>
@@ -75,8 +74,7 @@
                 <tr>
                     <th class="vertical-align">{{ $respondent->id }}</th>
                     <th>{{ $respondent->respondentID }}</th>
-                    <th>{{ $respondent->countryCode }}</th>
-                    <th>Greater Manchester</th>
+                    <th>{{ $respondent->country->countryName }}</th>
                     <th>{{ $respondent->status }}</th>
                     <th>{{ $respondent->updated_at }}</th>
                 </tr>

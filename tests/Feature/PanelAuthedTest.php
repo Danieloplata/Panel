@@ -27,19 +27,19 @@ class PanelAuthedTest extends TestCase
             ->assertSee($this->panel->panelName);
 	}
 
-	/** @test */
-    public function an_authenticated_user_can_view_individual_panels()
-    {
-        $response = $this->get('/panel/' . $this->panel->id)
-        	->assertSee($this->panel->panelName);
-    }
+//	/** @test */
+//    public function an_authenticated_user_can_view_individual_panels()
+//    {
+//        $response = $this->get('/panel/' . $this->panel->id)
+//        	->assertSee($this->panel->panelName);
+//    }
 
-    /** @test */
-    public function an_authenticated_user_can_view_the_create_panel_form()
-    {
-        $response = $this->get(route('createPanel', $this->project->id))
-            ->assertSee('Create a new panel');
-    }
+//    /** @test */
+//    public function an_authenticated_user_can_view_the_create_panel_form()
+//    {
+//        $response = $this->get(route('createPanel', $this->project->id))
+//            ->assertSee('Create a new panel');
+//    }
 
     /** @test */
     public function an_authenticated_user_can_create_panels()
@@ -48,12 +48,12 @@ class PanelAuthedTest extends TestCase
             ->assertSee($this->panel->panelName);
     }
 
-    /** @test */
-    public function an_authenticated_user_can_create_panel_providers()
-    {
-        $this->get($this->panel->path())
-            ->assertSee($this->panel->provider->providerName);
-    }
+//    /** @test */
+//    public function an_authenticated_user_can_create_panel_providers()
+//    {
+//        $this->get($this->panel->path())
+//            ->assertSee($this->panel->provider->providerName);
+//    }
 
     /** @test */
     public function an_authenticated_user_can_view_the_edit_panel_form()

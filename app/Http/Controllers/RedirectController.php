@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Respondent;
 use App\Panel;
@@ -25,13 +25,13 @@ class RedirectController extends Controller
         $countryCode = 231;
 
         $panel = Panel::findOrFail($panelID);
-		
+
         Respondent::create([
 			'panel_id' => $panelID,
             'country_id' => $countryCode,
 			'respondentID' => $respondentID,
-			'ipAddress' => sanitise($_SERVER['REMOTE_ADDR']),
-			'userAgent' => sanitise($_SERVER['HTTP_USER_AGENT']),
+			'ipAddress' => Request::getClientIp(),
+			'userAgent' => Request::userAgent(), //sanitise($_SERVER['HTTP_USER_AGENT']),
 			'status' => "incomplete",
     	]);
 

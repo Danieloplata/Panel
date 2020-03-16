@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Country;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -23,14 +24,22 @@ class PanelRedirectTest extends TestCase
     }
 
     /** @test */
-    public function a_respondent_can_access_the_start_route()
+    public function a_respondent_from_a_whitelisted_country_can_access_the_start_route()
     {
         $this->withoutExceptionHandling();
 
+        Country::create([
+            'id' => 231,
+            'countryCode' => 'GB',
+            'countryName' => 'United Kingdom'
+        ]);
+
+        $respondentID ='testRespondent';
+
         $this->get(route('redirectStart', [
             'panelid' => $this->panel->id,
-            'respondentid' => 'testRespondent'
-        ]))->assertRedirect($this->panel->redirectLink . 'testRespondent');
+            'respondentid' => $respondentID
+        ]))->assertRedirect($this->panel->redirectLink . $respondentID);
     }
 
 }

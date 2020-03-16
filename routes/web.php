@@ -15,7 +15,6 @@ Route::prefix('panel')->middleware('auth')->group(function () {
 	Route::get('/{panel}/respondents', 'RespondentController@index')->name('showRespondents');
 	Route::get('/{panel}/respondents/export', 'RespondentController@export')->name('exportAllRespondents');
 	Route::get('/{panel}/respondents/{status}', 'RespondentController@filter')->name('showFilteredRespondents');
-
 });
 
 // Panel Redirect
